@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CHRIST (Deemed to be University) — Pune Lavasa Campus</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="common.css">
-<style>
+/* CHRIST University Lavasa — Shared Stylesheet */
+/* Generated from index.html base styles */
+
+
 :root{--cu-navy:#0B1F3A;--cu-blue:#0C4D8B;--cu-blue-lt:#1A6BC4;--cu-blue-pale:#E8F0FB;--cu-gold:#C8860A;--cu-gold-lt:#E9A820;--cu-gold-pale:#FDF3E0;--cu-cream:#F8F6F1;--cu-text:#1C1C1E;--cu-text-2:#4A5568;--cu-text-3:#9CA3AF;--cu-border:#E5E9F0;--shadow-sm:0 2px 12px rgba(11,31,58,.07);--shadow:0 6px 32px rgba(11,31,58,.10);--shadow-lg:0 20px 60px rgba(11,31,58,.14);}
 html{scroll-behavior:smooth;}
 body{font-family:'DM Sans',sans-serif;color:var(--cu-text);-webkit-font-smoothing:antialiased;}html{overflow-x:hidden;}
@@ -67,7 +60,7 @@ a{text-decoration:none;}
 .campus-current-btn .cc-chevron{font-size:.55rem;transition:transform .22s;margin-left:.1rem;}
 .campus-switcher.open .cc-chevron{transform:rotate(180deg);}
 /* Dropdown panel */
-.campus-drop{position:absolute;top:calc(100% + .2rem);left:0;right:auto;
+.campus-drop{position:absolute;top:calc(100% + 2px);left:0;right:auto;
   background:#fff;border-radius:1rem;border:1px solid rgba(11,31,58,.1);
   box-shadow:0 20px 60px rgba(11,31,58,.18);z-index:1050;
   width:700px;max-width:calc(100vw - 2rem);opacity:0;transform:translateY(-8px);
@@ -83,6 +76,17 @@ a{text-decoration:none;}
   background:transparent;display:flex;align-items:center;justify-content:center;
   cursor:pointer;color:var(--cu-text-3);font-size:.7rem;transition:all .18s;}
 .campus-drop-close:hover{background:var(--cu-navy);border-color:var(--cu-navy);color:#fff;}
+/* Campus drop hover bridge */
+.campus-switcher.open .campus-drop::before,
+.campus-drop::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 12px;
+  background: transparent;
+}
 /* Campus grid */
 .campus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;padding:1rem 1.1rem 1.1rem;}
 .campus-item{display:flex;align-items:center;gap:.7rem;padding:.75rem .9rem;
@@ -137,11 +141,11 @@ a{text-decoration:none;}
 .carousel-item.active .slide-bg{transform:scale(1);}
 .slide-overlay{position:absolute;inset:0;background:linear-gradient(100deg,rgba(7,15,30,.82) 0%,rgba(7,15,30,.45) 55%,rgba(7,15,30,.18) 100%);}
 .slide-overlay::after{content:'';position:absolute;bottom:0;left:0;right:0;height:38%;background:linear-gradient(to top,rgba(7,15,30,.88),transparent);}
-.sb1{background:linear-gradient(140deg,#071526 0%,#0B2A50 40%,#0D4A8B 70%,#1060AD 100%);}
-.sb2{background:linear-gradient(140deg,#0A2010 0%,#0D3A18 40%,#155C28 70%,#1A6B30 100%);}
-.sb3{background:linear-gradient(140deg,#1A0B00 0%,#3D1A00 40%,#7A3A05 70%,#C8700A 100%);}
-.sb4{background:linear-gradient(140deg,#0B0B20 0%,#1A1A3A 40%,#2A2060 70%,#3A2880 100%);}
-.sb5{background:linear-gradient(140deg,#0A1A10 0%,#102A18 40%,#1A4228 70%,#245C38 100%);}
+.sb1{background:url("1.webp") center center/cover no-repeat;}
+.sb2{background:url("2.webp") center center/cover no-repeat;}
+.sb3{background:url("3.webp") center 30%/cover no-repeat;}
+.sb4{background:url("4.webp") center 40%/cover no-repeat;}
+.sb5{background:url("5.webp") center 40%/cover no-repeat;}
 .sb1::before,.sb2::before,.sb3::before,.sb4::before,.sb5::before{content:'';position:absolute;inset:0;opacity:.035;background-image:linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px);background-size:64px 64px;}
 .sb-icon{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:8rem;opacity:.06;pointer-events:none;}
 .slide-tag{opacity:0;transform:translateY(18px);transition:opacity .55s .2s,transform .55s .2s;}
@@ -1027,6 +1031,9 @@ a{text-decoration:none;}
 .social-btn{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.5);font-size:.75rem;font-weight:700;text-decoration:none;transition:all .2s;}
 .social-btn:hover{background:var(--cu-gold);border-color:var(--cu-gold);color:var(--cu-navy);}
 
+/* SCROLL TOP */
+
+
 
 
 @media(max-width:991px){#topbar{display:none!important;}.hero-thumbs{display:none!important;}.bento-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto;}.bento-card.span-2{grid-column:span 2;min-height:280px;}}
@@ -1147,904 +1154,359 @@ a{text-decoration:none;}
 }
 
 
-/* ===================================================
-   BCA PROGRAMME PAGE — SPECIFIC STYLES
-   Fonts/vars inherited from homepage (DM Sans, Cormorant, Bootstrap 5.3.3)
-=================================================== */
+/* ══ FYD — FIND YOUR DEGREE ══════════════════════════════════════════ */
+.fyd-section {
+  background: linear-gradient(160deg, #f0f4f8 0%, #e8eef5 55%, #f0f4f8 100%);
+  padding: 5rem 0 4rem;
+}
+.fyd-label {
+  display: flex; align-items: center; justify-content: center; gap: .55rem;
+  font-size: .68rem; font-weight: 700; letter-spacing: .15em;
+  text-transform: uppercase; color: var(--cu-gold); margin-bottom: .9rem;
+}
+.fyd-label::before {
+  content: ''; display: inline-block;
+  width: 3px; height: 1.05em; background: var(--cu-gold); border-radius: 2px;
+}
+.fyd-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 700; color: var(--cu-navy);
+  text-align: center; line-height: 1.1; margin-bottom: .75rem;
+}
+.fyd-heading em { font-style: italic; color: var(--cu-blue); }
+.fyd-subtext {
+  text-align: center; color: #000;
+  font-size: .96rem; max-width: 540px;
+  margin: 0 auto 2rem; line-height: 1.65;
+}
+/* Search */
+.fyd-search-wrap {
+  max-width: 640px; margin: 0 auto 1rem;
+  display: flex; align-items: center;
+  background: #fff; border: 1.5px solid rgba(12,77,139,.15);
+  border-radius: 3rem; padding: .42rem .42rem .42rem 1.3rem;
+  box-shadow: 0 6px 24px rgba(11,31,58,.08); transition: all .2s;
+}
+.fyd-search-wrap:focus-within {
+  border-color: var(--cu-blue);
+  box-shadow: 0 8px 30px rgba(12,77,139,.14);
+}
+.fyd-search-wrap .bi-search { color: #9ca3af; font-size: .88rem; margin-right: .4rem; flex-shrink: 0; }
+.fyd-search-input {
+  flex: 1; border: none; outline: none; background: none;
+  font-size: .92rem; font-family: 'DM Sans', sans-serif; color: #000; min-width: 0;
+}
+.fyd-search-input::placeholder { color: #9ca3af; }
+.fyd-search-btn {
+  background: var(--cu-navy); color: #fff; border: none; border-radius: 2rem;
+  padding: .52rem 1.25rem; font-size: .83rem; font-weight: 600;
+  font-family: 'DM Sans', sans-serif; cursor: pointer;
+  display: flex; align-items: center; gap: .35rem;
+  transition: background .2s; white-space: nowrap; flex-shrink: 0;
+}
+.fyd-search-btn:hover { background: var(--cu-blue); }
+.fyd-hint {
+  text-align: center; font-size: .76rem; color: #9ca3af;
+  margin-bottom: 2rem;
+  display: flex; align-items: center; justify-content: center; gap: .4rem;
+}
+/* Level cards — white default; only .active gets navy */
+.fyd-cards {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1rem; margin-bottom: 1.6rem;
+}
+@media(max-width:900px) { .fyd-cards { grid-template-columns: repeat(2,1fr); } }
+@media(max-width:480px) { .fyd-cards { grid-template-columns: 1fr; } }
+.fyd-card {
+  background: #fff;
+  border-radius: 1rem;
+  border: 2px solid rgba(12,77,139,.1);
+  padding: 1.25rem 1.1rem 1rem;
+  cursor: pointer; transition: all .2s;
+  box-shadow: 0 2px 10px rgba(11,31,58,.05);
+  display: flex; flex-direction: column; gap: .35rem;
+  position: relative; overflow: hidden;
+}
+.fyd-card::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+  background: var(--cu-gold); transform: scaleX(0); transform-origin: left;
+  transition: transform .2s;
+}
+.fyd-card:hover { box-shadow: 0 6px 20px rgba(11,31,58,.1); transform: translateY(-2px); border-color: rgba(12,77,139,.2); }
+.fyd-card:hover::after { transform: scaleX(1); }
+.fyd-card.active { background: var(--cu-navy); border-color: var(--cu-navy); box-shadow: 0 8px 24px rgba(11,31,58,.2); transform: translateY(-2px); }
+.fyd-card.active::after { transform: scaleX(1); background: var(--cu-gold); }
+.fyd-card-icon {
+  width: 38px; height: 38px; border-radius: .65rem;
+  background: #e8f0fb;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem; margin-bottom: .2rem; transition: background .2s;
+}
+.fyd-card.active .fyd-card-icon { background: rgba(255,255,255,.15); }
+.fyd-card-level {
+  font-size: .7rem; font-weight: 800; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--cu-navy);
+  font-family: 'DM Mono', monospace;
+}
+.fyd-card.active .fyd-card-level { color: rgba(255,255,255,.72); }
+.fyd-card-count { font-size: .79rem; color: #000; }
+.fyd-card.active .fyd-card-count { color: rgba(255,255,255,.58); }
+.fyd-card-tags { display: flex; flex-wrap: wrap; gap: .22rem; margin-top: .28rem; }
+.fyd-card-tag {
+  font-size: .63rem; font-weight: 700; padding: .16rem .44rem; border-radius: 2rem;
+  background: rgba(12,77,139,.09); color: var(--cu-navy);
+  font-family: 'DM Mono', monospace; transition: background .2s, color .2s;
+}
+.fyd-card.active .fyd-card-tag { background: rgba(255,255,255,.18); color: #fff; }
+/* Results panel — light */
+.fyd-panel {
+  background: #fff; border-radius: 1rem; overflow: hidden;
+  border: 1.5px solid rgba(12,77,139,.1);
+  box-shadow: 0 4px 20px rgba(11,31,58,.07);
+}
+.fyd-panel-hdr {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: .85rem 1.25rem; background: var(--cu-navy);
+  flex-wrap: wrap; gap: .55rem;
+}
+.fyd-panel-title-wrap { display: flex; align-items: center; gap: .6rem; }
+.fyd-panel-icon {
+  width: 25px; height: 25px; background: rgba(255,255,255,.12);
+  border-radius: .3rem; display: flex; align-items: center;
+  justify-content: center; font-size: .82rem; flex-shrink: 0;
+}
+.fyd-panel-title {
+  font-size: .73rem; font-weight: 800; letter-spacing: .12em;
+  text-transform: uppercase; color: #fff; font-family: 'DM Mono', monospace;
+}
+.fyd-panel-right { display: flex; align-items: center; gap: .6rem; }
+.fyd-campus-badge {
+  font-size: .61rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  background: rgba(255,255,255,.11); color: rgba(255,255,255,.78);
+  padding: .2rem .6rem; border-radius: .28rem;
+  border: 1px solid rgba(255,255,255,.16); font-family: 'DM Mono', monospace;
+}
+.fyd-result-count { font-size: .73rem; color: rgba(255,255,255,.58); font-family: 'DM Mono', monospace; }
+/* School filter row */
+.fyd-school-row {
+  display: flex; align-items: center; gap: .45rem; flex-wrap: wrap;
+  padding: .7rem 1.25rem;
+  border-bottom: 1px solid rgba(12,77,139,.07);
+  background: var(--cu-blue-pale);
+}
+.fyd-school-lbl {
+  font-size: .64rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--cu-text-2); font-family: 'DM Mono', monospace; white-space: nowrap;
+}
+.fyd-sb {
+  font-size: .75rem; font-weight: 500; padding: .26rem .75rem; border-radius: 2rem;
+  border: 1.5px solid rgba(12,77,139,.15); cursor: pointer; background: #fff;
+  color: var(--cu-text); font-family: 'DM Sans', sans-serif;
+  transition: all .16s; line-height: 1.3; display: flex; align-items: center; gap: .25rem;
+}
+.fyd-sb:hover { border-color: var(--cu-blue); color: var(--cu-blue); background: #eef3fb; }
+.fyd-sb.active { background: var(--cu-navy); border-color: var(--cu-navy); color: #fff; font-weight: 600; }
+/* Programme list */
+.fyd-body { max-height: 380px; overflow-y: auto; scroll-behavior: smooth; background: #fff; }
+.fyd-body::-webkit-scrollbar { width: 4px; }
+.fyd-body::-webkit-scrollbar-track { background: transparent; }
+.fyd-body::-webkit-scrollbar-thumb { background: rgba(12,77,139,.15); border-radius: 4px; }
+.fyd-grp-hdr {
+  display: flex; align-items: center; gap: .42rem;
+  font-size: .63rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--cu-text-2); padding: .48rem 1.25rem .28rem;
+  background: var(--cu-blue-pale); border-bottom: 1px solid rgba(12,77,139,.06);
+  font-family: 'DM Mono', monospace;
+}
+.fyd-grp-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.fyd-row {
+  display: flex; align-items: center; gap: .7rem; padding: .6rem 1.25rem;
+  text-decoration: none; color: #000; transition: background .13s;
+  border-bottom: 1px solid rgba(12,77,139,.05);
+}
+.fyd-row:hover { background: #f0f5ff; color: #000; }
+.fyd-row:last-child { border-bottom: none; }
+.fyd-row-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 1px; }
+.fyd-row-dot.ug     { background: #3B82F6; }
+.fyd-row-dot.pg     { background: #16a34a; }
+.fyd-row-dot.phd    { background: var(--cu-gold); }
+.fyd-row-dot.online { background: #a855f7; }
+.fyd-row-body { flex: 1; min-width: 0; }
+.fyd-row-name { font-size: .83rem; font-weight: 600; color: #000; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.fyd-row-meta { font-size: .69rem; color: var(--cu-text-2); margin-top: .06rem; }
+.fyd-row-tags { display: flex; gap: .2rem; flex-wrap: wrap; margin-top: .15rem; }
+.fyd-row-tag { font-size: .6rem; background: #e8f0fb; color: var(--cu-blue); padding: .07rem .36rem; border-radius: 2rem; font-weight: 600; }
+.fyd-row-right { display: flex; align-items: center; gap: .4rem; flex-shrink: 0; }
+.fyd-row-dur { font-size: .69rem; color: var(--cu-text-2); white-space: nowrap; }
+.fyd-row-arr { color: var(--cu-blue); font-size: .76rem; opacity: 0; transition: all .13s; }
+.fyd-row:hover .fyd-row-arr { opacity: 1; transform: translateX(3px); }
+.fyd-empty { padding: 2.5rem; text-align: center; color: var(--cu-text-2); font-size: .86rem; }
+.fyd-empty a { color: var(--cu-blue); }
+.fyd-panel-ftr {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: .7rem 1.25rem; border-top: 1px solid rgba(12,77,139,.08);
+  background: var(--cu-blue-pale); flex-wrap: wrap; gap: .5rem;
+}
+.fyd-legend { display: flex; gap: .85rem; flex-wrap: wrap; }
+.fyd-leg { display: flex; align-items: center; gap: .3rem; font-size: .69rem; color: var(--cu-text-2); }
+.fyd-leg-dot { width: 7px; height: 7px; border-radius: 50%; }
+.fyd-view-all {
+  font-size: .77rem; font-weight: 700; color: var(--cu-blue);
+  text-decoration: none; display: flex; align-items: center; gap: .28rem;
+  transition: gap .17s;
+}
+.fyd-view-all:hover { gap: .52rem; color: var(--cu-blue); }
+/* ══ END FYD ══════════════════════════════════════════════════════════ */
 
-/* BREADCRUMB */
-.pg-breadcrumb{background:#f4f7fb;border-bottom:1px solid var(--cu-border);padding:.65rem 0;font-size:.75rem;}
-.pg-breadcrumb .breadcrumb{margin:0;}
-.pg-breadcrumb .breadcrumb-item a{color:var(--cu-blue);text-decoration:none;}
-.pg-breadcrumb .breadcrumb-item.active{color:var(--cu-text-2);}
-
-/* HERO */
-.pg-hero{background:linear-gradient(135deg,var(--cu-navy) 0%,var(--cu-blue) 100%);padding:4.5rem 0 3.5rem;position:relative;overflow:hidden;}
-.pg-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 20% 50%,rgba(255,255,255,.04) 0%,transparent 60%),radial-gradient(circle at 80% 20%,rgba(200,134,10,.08) 0%,transparent 50%);}
-.pg-hero-eyebrow{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.85);border-radius:2rem;padding:.3rem 1rem;font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:1.25rem;}
-.pg-hero-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,5vw,3.8rem);font-weight:700;color:#fff;line-height:1.1;margin-bottom:1rem;}
-.pg-hero-h1 em{color:var(--cu-gold-lt);font-style:italic;}
-.pg-hero-lead{font-size:.92rem;color:rgba(255,255,255,.78);line-height:1.85;margin-bottom:1.75rem;max-width:520px;}
-.pg-hero-pills{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.75rem;}
-.pg-pill{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.9);border-radius:2rem;padding:.22rem .75rem;font-size:.72rem;font-weight:600;display:inline-flex;align-items:center;gap:.35rem;}
-.pg-pill i{color:var(--cu-gold-lt);}
-.pg-hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2rem;}
-.pg-hero-stats{display:flex;flex-wrap:wrap;gap:2.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.12);}
-.pg-hero-stat .val{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--cu-gold-lt);line-height:1;}
-.pg-hero-stat .lbl{font-size:.68rem;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.07em;margin-top:.2rem;}
-.pg-hero-img-wrap{border-radius:1.25rem;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.35);position:relative;}
-.pg-hero-img{width:100%;height:380px;object-fit:cover;display:block;}
-.pg-hero-badge-float{position:absolute;bottom:1.25rem;left:1.25rem;background:#fff;border-radius:.75rem;padding:.75rem 1rem;display:flex;align-items:center;gap:.65rem;box-shadow:0 8px 24px rgba(0,0,0,.2);}
-.pg-hero-badge-float i{color:var(--cu-gold);font-size:1.1rem;}
-.pg-hero-badge-float strong{display:block;font-size:.8rem;font-weight:700;color:var(--cu-navy);}
-.pg-hero-badge-float span{font-size:.7rem;color:var(--cu-text-2);}
-
-/* APPLY BUTTONS */
-.btn-pg-gold{background:linear-gradient(135deg,var(--cu-gold),#e9960a);color:#fff;border:none;border-radius:.55rem;padding:.75rem 2rem;font-size:.88rem;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.4rem;transition:all .25s;font-family:'DM Sans',sans-serif;cursor:pointer;}
-.btn-pg-gold:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(200,134,10,.4);color:#fff;}
-.btn-pg-outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4);border-radius:.55rem;padding:.75rem 1.75rem;font-size:.88rem;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:.4rem;transition:all .25s;font-family:'DM Sans',sans-serif;cursor:pointer;}
-.btn-pg-outline:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.7);color:#fff;}
-.btn-pg-blue{background:linear-gradient(135deg,var(--cu-blue),var(--cu-navy));color:#fff;border:none;border-radius:.55rem;padding:.6rem 1.25rem;font-size:.82rem;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.4rem;transition:all .25s;font-family:'DM Sans',sans-serif;cursor:pointer;}
-.btn-pg-blue:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(12,77,139,.35);color:#fff;}
-
-/* HIGHLIGHT STRIP */
-.pg-strip{background:var(--cu-navy);border-top:3px solid var(--cu-gold);border-bottom:3px solid rgba(255,255,255,.06);padding:2rem 0;}
-.pg-strip .container-xl{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;text-align:center;}
-.hl-num{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:700;color:var(--cu-gold-lt);line-height:1;display:block;}
-.hl-lbl{font-size:.68rem;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.08em;margin-top:.25rem;}
-@media(max-width:576px){.pg-strip .container-xl{grid-template-columns:repeat(2,1fr);}}
-
-/* PAGE LAYOUT */
-.pg-layout{display:grid;grid-template-columns:260px 1fr;gap:2.5rem;align-items:start;}
-.pg-layout>main{min-width:0;}
-@media(max-width:991px){.pg-layout{grid-template-columns:1fr;} .pg-sidenav{display:none;}}
-
-/* SIDENAV */
-.pg-sidenav{position:sticky;top:82px;}
-.pg-snav-card{background:#fff;border:1px solid var(--cu-border);border-radius:1rem;overflow:hidden;box-shadow:var(--shadow-sm);margin-bottom:1rem;}
-.pg-snav-head{background:linear-gradient(135deg,var(--cu-navy),var(--cu-blue));color:#fff;padding:.8rem 1.1rem;font-size:.67rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;display:flex;align-items:center;gap:.5rem;}
-.pg-snav-head i{color:var(--cu-gold-lt);}
-.pg-nav-links{padding:.3rem 0;}
-.pg-nav-link{display:flex;align-items:center;gap:.65rem;padding:.58rem 1.1rem;font-size:.79rem;font-weight:500;color:var(--cu-text-2);cursor:pointer;border:none;background:none;width:100%;text-align:left;border-left:3px solid transparent;transition:all .18s;font-family:'DM Sans',sans-serif;}
-.pg-nav-link i{font-size:.82rem;color:var(--cu-blue);opacity:.55;flex-shrink:0;}
-.pg-nav-link:hover{background:var(--cu-blue-pale);color:var(--cu-blue);}
-.pg-nav-link.active{background:var(--cu-blue-pale);color:var(--cu-blue);font-weight:700;border-left-color:var(--cu-gold);}
-.pg-nav-link.active i{opacity:1;}
-.pg-facts{padding:.7rem 1.1rem;}
-.pg-fact{display:flex;justify-content:space-between;align-items:center;padding:.42rem 0;border-bottom:1px solid var(--cu-border);font-size:.75rem;}
-.pg-fact:last-child{border-bottom:none;}
-.pg-fact-k{color:var(--cu-text-2);}
-.pg-fact-v{font-weight:700;color:var(--cu-navy);text-align:right;max-width:56%;}
-.pg-apply-cta{background:linear-gradient(135deg,var(--cu-navy),var(--cu-blue));border-radius:1rem;padding:1.25rem;}
-.pg-apply-cta-lbl{font-size:.67rem;font-weight:700;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.08em;display:flex;align-items:center;gap:.4rem;margin-bottom:.55rem;}
-.pg-apply-cta-lbl i{color:var(--cu-gold-lt);}
-.pg-apply-cta p{font-size:.75rem;color:rgba(255,255,255,.65);line-height:1.6;margin-bottom:.8rem;}
-.pg-deadline-badge{background:rgba(200,134,10,.18);border:1px solid rgba(200,134,10,.35);border-radius:.4rem;padding:.38rem .7rem;font-size:.7rem;color:var(--cu-gold-lt);font-weight:700;display:flex;align-items:center;gap:.4rem;margin-bottom:.85rem;}
-
-/* SECTIONS */
-.pg-section{padding:2.75rem 0;border-bottom:1px solid var(--cu-border);}
-.pg-section:last-child{border-bottom:none;}
-.pg-eyebrow{font-size:.67rem;font-weight:700;color:var(--cu-gold);text-transform:uppercase;letter-spacing:.1em;display:flex;align-items:center;gap:.5rem;margin-bottom:.5rem;}
-.pg-eyebrow::before{content:'';display:inline-block;width:18px;height:2px;background:var(--cu-gold);border-radius:2px;}
-.pg-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem,3vw,2.1rem);font-weight:700;color:var(--cu-navy);line-height:1.2;margin-bottom:1.1rem;position:relative;padding-bottom:.75rem;}
-.pg-title::after{content:'';position:absolute;bottom:0;left:0;width:36px;height:3px;background:var(--cu-gold);border-radius:2px;transition:width .5s ease;}
-.pg-title.anim::after{width:72px;}
-.pg-lead{font-size:.88rem;color:var(--cu-text-2);line-height:1.85;margin-bottom:1.5rem;}
-
-/* OVERVIEW CARDS */
-.ov-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.1rem;}
-@media(max-width:600px){.ov-grid{grid-template-columns:1fr;}}
-.ov-card{background:#fff;border:1px solid var(--cu-border);border-top:3px solid var(--cu-gold);border-radius:1rem;padding:1.5rem;box-shadow:var(--shadow-sm);transition:all .25s;}
-.ov-card:hover{box-shadow:var(--shadow);transform:translateY(-3px);}
-.ov-icon{width:42px;height:42px;border-radius:.7rem;background:var(--cu-blue-pale);color:var(--cu-blue);display:flex;align-items:center;justify-content:center;font-size:1.05rem;margin-bottom:.9rem;}
-.ov-card h6{font-size:.86rem;font-weight:700;color:var(--cu-navy);margin-bottom:.35rem;}
-.ov-card p{font-size:.79rem;color:var(--cu-text-2);line-height:1.72;margin:0;}
-
-/* WHY CARDS */
-.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.9rem;}
-@media(max-width:600px){.why-grid{grid-template-columns:1fr;}}
-.why-card{display:flex;gap:.85rem;align-items:flex-start;background:#fff;border:1px solid var(--cu-border);border-radius:.85rem;padding:1.1rem;box-shadow:var(--shadow-sm);transition:all .22s;}
-.why-card:hover{box-shadow:var(--shadow);border-color:var(--cu-blue-pale);}
-.why-icon{width:36px;height:36px;min-width:36px;border-radius:.55rem;background:var(--cu-blue-pale);color:var(--cu-blue);display:flex;align-items:center;justify-content:center;font-size:.9rem;}
-.why-card h6{font-size:.81rem;font-weight:700;color:var(--cu-navy);margin-bottom:.22rem;}
-.why-card p{font-size:.75rem;color:var(--cu-text-2);line-height:1.65;margin:0;}
-
-/* OUTCOMES */
-.out-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;}
-@media(max-width:768px){.out-grid{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:480px){.out-grid{grid-template-columns:1fr;}}
-.out-tile{background:var(--cu-blue-pale);border:1px solid #c8dcf5;border-radius:.75rem;padding:.95rem;display:flex;align-items:center;gap:.6rem;font-size:.79rem;font-weight:600;color:var(--cu-navy);transition:all .22s;}
-.out-tile i{font-size:1.05rem;color:var(--cu-blue);flex-shrink:0;}
-.out-tile:hover{background:var(--cu-blue);color:#fff;border-color:var(--cu-blue);}
-.out-tile:hover i{color:#fff;}
-
-/* CURRICULUM */
-.curr-tabs{display:flex;gap:.45rem;margin-bottom:1.1rem;border-bottom:2px solid var(--cu-border);padding-bottom:.45rem;}
-.curr-tab{padding:.42rem 1.2rem;border-radius:.4rem .4rem 0 0;border:none;background:transparent;font-size:.81rem;font-weight:600;color:var(--cu-text-2);cursor:pointer;font-family:'DM Sans',sans-serif;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .18s;}
-.curr-tab.active{color:var(--cu-blue);border-bottom-color:var(--cu-blue);background:var(--cu-blue-pale);}
-.curr-pane{display:none;}
-.curr-pane.active{display:block;animation:pgFadeIn .3s ease;}
-@keyframes pgFadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
-.curr-sem{margin-bottom:.8rem;border:1px solid var(--cu-border);border-radius:.85rem;overflow:hidden;}
-.curr-sem-hd{background:linear-gradient(135deg,var(--cu-navy),var(--cu-blue));color:#fff;padding:.82rem 1.2rem;display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none;}
-.curr-sem-hd h6{font-size:.83rem;font-weight:700;margin:0;color:#fff;display:flex;align-items:center;gap:.4rem;}
-.curr-sem-meta{font-size:.7rem;color:rgba(255,255,255,.6);display:flex;align-items:center;gap:.6rem;}
-.curr-sem-toggle{transition:transform .25s;}
-.curr-sem-hd.open .curr-sem-toggle{transform:rotate(180deg);}
-.curr-sem-body{display:none;}
-.curr-row{display:flex;align-items:center;gap:.5rem;padding:.62rem 1.2rem;border-bottom:1px solid var(--cu-border);font-size:.79rem;transition:background .15s;}
-.curr-row:last-of-type{border-bottom:none;}
-.curr-row:hover{background:var(--cu-blue-pale);}
-.curr-code{font-size:.67rem;font-weight:700;padding:.14rem .48rem;border-radius:.3rem;min-width:62px;text-align:center;flex-shrink:0;}
-.curr-code.core{background:#dcfce7;color:#166534;}
-.curr-code.elec{background:#fef9c3;color:#854d0e;}
-.curr-name{flex:1;font-weight:500;color:var(--cu-navy);}
-.curr-cr{font-size:.71rem;color:var(--cu-text-2);font-weight:600;white-space:nowrap;}
-.curr-legend{padding:.45rem 1.2rem;font-size:.67rem;color:var(--cu-text-2);background:var(--cu-cream);}
-
-/* ELIGIBILITY / FEE */
-.elig-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;}
-@media(max-width:680px){.elig-grid{grid-template-columns:1fr;}}
-.elig-card{background:#fff;border:1px solid var(--cu-border);border-radius:1rem;padding:1.5rem;box-shadow:var(--shadow-sm);}
-.elig-hd{font-size:.84rem;font-weight:700;color:var(--cu-navy);margin-bottom:.9rem;display:flex;align-items:center;gap:.4rem;padding-bottom:.7rem;border-bottom:2px solid var(--cu-border);}
-.elig-hd i{color:var(--cu-gold);}
-.elig-list{list-style:none;padding:0;margin:0;}
-.elig-list li{display:flex;align-items:flex-start;gap:.55rem;font-size:.79rem;color:var(--cu-text-2);padding:.38rem 0;border-bottom:1px solid var(--cu-border);line-height:1.55;}
-.elig-list li:last-child{border-bottom:none;}
-.elig-list li i{color:var(--cu-blue);margin-top:.15rem;flex-shrink:0;}
-.fee-row{display:flex;justify-content:space-between;align-items:center;padding:.58rem 0;border-bottom:1px solid var(--cu-border);font-size:.79rem;}
-.fee-row:last-of-type{border-bottom:none;}
-.fee-row span:first-child{color:var(--cu-text-2);}
-.fee-row span:last-child{font-weight:700;color:var(--cu-navy);}
-.fee-note{font-size:.71rem;color:var(--cu-text-2);margin-top:.7rem;line-height:1.6;display:flex;align-items:flex-start;gap:.3rem;}
-.fee-note i{color:var(--cu-blue);flex-shrink:0;margin-top:.1rem;}
-
-/* CAREER CARDS */
-.career-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;margin-bottom:1.75rem;}
-@media(max-width:768px){.career-grid{grid-template-columns:repeat(3,1fr);}}
-@media(max-width:480px){.career-grid{grid-template-columns:repeat(2,1fr);}}
-.career-card{background:#fff;border:1px solid var(--cu-border);border-top:3px solid var(--cu-gold);border-radius:.85rem;padding:1rem .7rem;text-align:center;box-shadow:var(--shadow-sm);transition:all .22s;}
-.career-card:hover{box-shadow:var(--shadow);transform:translateY(-3px);border-top-color:var(--cu-blue);}
-.career-card i{font-size:1.45rem;color:var(--cu-blue);margin-bottom:.45rem;display:block;}
-.career-card span{font-size:.74rem;font-weight:600;color:var(--cu-navy);}
-.alumni-tag{background:var(--cu-blue-pale);color:var(--cu-blue);border:1px solid #c8dcf5;border-radius:2rem;padding:.26rem .82rem;font-size:.74rem;font-weight:600;display:inline-block;margin:.2rem;}
-
-/* ROADMAP */
-.rm-btns{display:flex;gap:.55rem;flex-wrap:wrap;margin-bottom:1.4rem;}
-.rm-btn{padding:.42rem 1.05rem;border-radius:2rem;border:1.5px solid var(--cu-border);background:#fff;font-size:.77rem;font-weight:600;color:var(--cu-text-2);cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif;}
-.rm-btn.active,.rm-btn:hover{background:var(--cu-blue);color:#fff;border-color:var(--cu-blue);}
-.rm-track{display:none;}
-.rm-track.active{display:block;animation:pgFadeIn .3s ease;}
-.rm-timeline{position:relative;padding-left:0;margin-bottom:1.4rem;}
-.rm-timeline::before{display:none;}
-.rm-step{display:flex;gap:1.25rem;align-items:center;margin-bottom:1.25rem;position:relative;}
-
-.rm-step:last-child{margin-bottom:0;}
-.rm-node{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:800;flex-shrink:0;color:#fff;position:relative;z-index:1;margin-top:.15rem;}
-.rm-node.y1{background:linear-gradient(135deg,var(--cu-blue),#1a6ab5);}
-.rm-node.y2{background:linear-gradient(135deg,#1a6ab5,#a0620a);}
-.rm-node.y3{background:linear-gradient(135deg,var(--cu-gold),#e9960a);}
-.rm-content{background:#fff;border:1px solid var(--cu-border);border-radius:.85rem;padding:.95rem 1.15rem;flex:1;transition:all .22s;}
-.rm-content:hover{box-shadow:var(--shadow);transform:translateX(4px);}
-.rm-yr{font-size:.81rem;font-weight:700;color:var(--cu-navy);margin-bottom:.25rem;}
-.rm-subs{font-size:.74rem;color:var(--cu-text-2);line-height:1.6;margin-bottom:.4rem;}
-.rm-milestone{font-size:.71rem;font-weight:600;color:var(--cu-gold);display:flex;align-items:center;gap:.32rem;}
-.rm-outcome{background:linear-gradient(135deg,var(--cu-navy),var(--cu-blue));border-radius:1rem;padding:1.4rem 1.6rem;}
-.rm-outcome-lbl{font-size:.72rem;font-weight:700;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.07em;margin-bottom:.7rem;}
-.rm-jobs{display:flex;flex-wrap:wrap;gap:.42rem;margin-bottom:.8rem;}
-.rm-job{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:2rem;padding:.2rem .65rem;font-size:.73rem;font-weight:600;}
-.rm-salary{font-size:.76rem;color:rgba(255,255,255,.6);}
-.rm-salary strong{color:var(--cu-gold-lt);}
-
-/* HOD */
-.hod-card{display:flex;gap:2rem;align-items:flex-start;background:#fff;border:1px solid var(--cu-border);border-radius:1.25rem;padding:2rem;box-shadow:var(--shadow-sm);}
-@media(max-width:680px){.hod-card{flex-direction:column;align-items:center;text-align:center;}}
-.hod-photo-wrap{flex-shrink:0;text-align:center;}
-.hod-photo{width:108px;height:108px;border-radius:50%;object-fit:cover;border:3px solid var(--cu-gold);margin-bottom:.7rem;display:block;}
-.hod-name{font-size:.86rem;font-weight:700;color:var(--cu-navy);}
-.hod-role{font-size:.71rem;color:var(--cu-text-2);line-height:1.5;}
-.hod-msg p{font-size:.83rem;color:var(--cu-text-2);line-height:1.85;margin-bottom:.8rem;}
-.hod-sig{font-size:.75rem;font-weight:600;color:var(--cu-blue);border-top:1px solid var(--cu-border);padding-top:.7rem;margin-top:.2rem;}
-
-/* TESTIMONIALS */
-.testi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.1rem;}
-@media(max-width:640px){.testi-grid{grid-template-columns:1fr;}}
-.testi-card{background:#fff;border:1px solid var(--cu-border);border-left:4px solid var(--cu-gold);border-radius:1rem;padding:1.4rem;box-shadow:var(--shadow-sm);transition:all .22s;}
-.testi-card:hover{box-shadow:var(--shadow);}
-.testi-stars{color:var(--cu-gold);font-size:.82rem;margin-bottom:.7rem;letter-spacing:.1em;}
-.testi-text{font-size:.81rem;color:var(--cu-text-2);line-height:1.82;font-style:italic;margin-bottom:1rem;}
-.testi-author{display:flex;align-items:center;gap:.7rem;}
-.testi-photo{width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid var(--cu-border);}
-.testi-author strong{display:block;font-size:.79rem;font-weight:700;color:var(--cu-navy);}
-.testi-author span{font-size:.69rem;color:var(--cu-text-2);}
-
-/* ADMISSION PROCESS */
-.process-row{display:flex;align-items:flex-start;gap:.45rem;flex-wrap:wrap;margin-bottom:2rem;}
-.process-step{flex:1;min-width:130px;text-align:center;background:#fff;border:1px solid var(--cu-border);border-radius:1rem;padding:1.4rem 1rem;box-shadow:var(--shadow-sm);}
-.process-num{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--cu-blue),var(--cu-navy));color:#fff;font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto .7rem;}
-.process-label{font-size:.81rem;font-weight:700;color:var(--cu-navy);margin-bottom:.28rem;}
-.process-desc{font-size:.71rem;color:var(--cu-text-2);line-height:1.55;}
-.process-arrow{display:flex;align-items:center;color:var(--cu-border);font-size:1.2rem;padding-top:1.5rem;flex-shrink:0;}
-@media(max-width:600px){.process-arrow{display:none;}.process-step{min-width:calc(50% - .45rem);}}
-.process-cta{background:var(--cu-blue-pale);border:1px solid var(--cu-border);border-radius:1rem;padding:1.75rem 2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.25rem;}
-
-/* RESOURCES BAR */
-.res-bar{background:var(--cu-navy);border-top:3px solid var(--cu-gold);}
-.res-inner{display:flex;align-items:stretch;flex-wrap:wrap;}
-.res-link{flex:1;min-width:130px;display:flex;align-items:center;gap:.7rem;padding:1rem 1.25rem;text-decoration:none;border-right:1px solid rgba(255,255,255,.07);transition:background .2s;}
-.res-link:last-child{border-right:none;}
-.res-link:hover{background:rgba(255,255,255,.07);}
-.res-link-ic{width:32px;height:32px;border-radius:.48rem;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:var(--cu-gold-lt);font-size:.9rem;flex-shrink:0;transition:all .2s;}
-.res-link:hover .res-link-ic{background:var(--cu-gold);color:var(--cu-navy);}
-.res-link-nm{font-size:.76rem;font-weight:600;color:rgba(255,255,255,.82);}
-.res-link-ds{font-size:.63rem;color:rgba(255,255,255,.42);margin-top:.08rem;}
-
-/* SCROLL REVEAL */
-.sr{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease;}
-.sr.vis{opacity:1;transform:none;}
-
-/* SCROLLTOP */
-/* scrollTop handled by common.css */
-
-</style>
-</head>
-<body>
-
-
-<!-- TOP BAR -->
-<div id="cu-nav-placeholder"></div>
-
-<!-- BREADCRUMB -->
-<div class="pg-breadcrumb">
-  <div class="container-xl">
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb mb-0">
-        <li class="breadcrumb-item"><a href="index.html"><i class="bi bi-house-fill me-1"></i>Home</a></li>
-        <li class="breadcrumb-item"><a href="academics.html">Academics</a></li>
-        <li class="breadcrumb-item"><a href="school-of-sciences.html">School of Sciences</a></li>
-        <li class="breadcrumb-item active">BCA</li>
-      </ol>
-    </nav>
-  </div>
-</div>
-
-<!-- HERO -->
-<section class="pg-hero">
-  <div class="container-xl position-relative">
-    <div class="row align-items-center g-5">
-      <div class="col-lg-6">
-        <div class="pg-hero-eyebrow"><i class="bi bi-mortarboard-fill"></i>Undergraduate &middot; 3 Years &middot; NAAC A+</div>
-        <h1 class="pg-hero-h1">Bachelor of <em>Computer</em><br>Applications</h1>
-        <p class="pg-hero-lead">Honours / Honours with Research &mdash; your gateway to a dynamic career in technology. Build real-world skills in AI, software, cybersecurity and data science at India&rsquo;s most scenic campus.</p>
-        <div class="pg-hero-pills">
-          <span class="pg-pill"><i class="bi bi-check-circle-fill"></i>NEP 2020 Aligned</span>
-          <span class="pg-pill"><i class="bi bi-check-circle-fill"></i>UGC Recognised</span>
-          <span class="pg-pill"><i class="bi bi-check-circle-fill"></i>Industry Projects</span>
-          <span class="pg-pill"><i class="bi bi-check-circle-fill"></i>Global Exchange</span>
-          <span class="pg-pill"><i class="bi bi-check-circle-fill"></i>60 Seats</span>
-        </div>
-        <div class="pg-hero-btns">
-          <a href="https://espro.christuniversity.in/Application/" target="_blank" class="btn-pg-gold">Apply Now &ndash; 2025&ndash;26 <i class="bi bi-arrow-right"></i></a>
-          <a href="#" onclick="scrollToSec('overview');return false;" class="btn-pg-outline">Explore Programme <i class="bi bi-chevron-down"></i></a>
-        </div>
-        <div class="pg-hero-stats">
-          <div class="pg-hero-stat"><div class="val">100%</div><div class="lbl">Placement Support</div></div>
-          <div class="pg-hero-stat"><div class="val">6+</div><div class="lbl">Specialisations</div></div>
-          <div class="pg-hero-stat"><div class="val">30+</div><div class="lbl">Industry Partners</div></div>
-          <div class="pg-hero-stat"><div class="val">3 Yrs</div><div class="lbl">Duration</div></div>
-        </div>
-      </div>
-      <div class="col-lg-6 d-none d-lg-block">
-        <div class="pg-hero-img-wrap">
-          <img src="https://lavasa.christuniversity.in/uploads/course/banner/508590109_2026-02-20_03-40-46.webp" alt="BCA Students CHRIST Lavasa" class="pg-hero-img">
-          <div class="pg-hero-badge-float">
-            <i class="bi bi-calendar-check-fill"></i>
-            <div><strong>Applications Open</strong><span>Until 30 March 2026</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- STRIP -->
-<div class="pg-strip">
-  <div class="container-xl">
-    <div class="hl-item"><span class="hl-num" data-to="100">0</span><div class="hl-lbl">% Placement Support</div></div>
-    <div class="hl-item"><span class="hl-num" data-to="60">0</span><div class="hl-lbl">Seats Available</div></div>
-    <div class="hl-item"><span class="hl-num" data-to="30">0</span><div class="hl-lbl">+ Industry Partners</div></div>
-    <div class="hl-item"><span class="hl-num" data-to="6">0</span><div class="hl-lbl">+ Specialisation Tracks</div></div>
-  </div>
-</div>
-
-<!-- MAIN -->
-<div class="container-xl py-5">
-  <div class="pg-layout">
-
-    <!-- SIDENAV -->
-    <aside class="pg-sidenav">
-      <div class="pg-snav-card">
-        <div class="pg-snav-head"><i class="bi bi-list-ul"></i>Programme Guide</div>
-        <nav class="pg-nav-links">
-          <button class="pg-nav-link active" onclick="scrollToSec('overview')"><i class="bi bi-info-circle"></i>Overview</button>
-          <button class="pg-nav-link" onclick="scrollToSec('why')"><i class="bi bi-star"></i>Why Choose BCA?</button>
-          <button class="pg-nav-link" onclick="scrollToSec('outcomes')"><i class="bi bi-bullseye"></i>Learning Outcomes</button>
-          <button class="pg-nav-link" onclick="scrollToSec('curriculum')"><i class="bi bi-journal-text"></i>Curriculum</button>
-          <button class="pg-nav-link" onclick="scrollToSec('eligibility')"><i class="bi bi-check2-square"></i>Eligibility &amp; Fees</button>
-          <button class="pg-nav-link" onclick="scrollToSec('careers')"><i class="bi bi-briefcase"></i>Career Paths</button>
-          <button class="pg-nav-link" onclick="scrollToSec('roadmap')"><i class="bi bi-signpost-split"></i>Career Roadmap</button>
-          <button class="pg-nav-link" onclick="scrollToSec('hod')"><i class="bi bi-person-badge"></i>Message from HOD</button>
-          <button class="pg-nav-link" onclick="scrollToSec('testimonials')"><i class="bi bi-chat-quote"></i>Student Stories</button>
-          <button class="pg-nav-link" onclick="scrollToSec('process')"><i class="bi bi-diagram-3"></i>Admission Process</button>
-        </nav>
-      </div>
-      <div class="pg-snav-card">
-        <div class="pg-snav-head"><i class="bi bi-info-square"></i>Quick Facts</div>
-        <div class="pg-facts">
-          <div class="pg-fact"><span class="pg-fact-k">Degree</span><span class="pg-fact-v">BCA / Hons / Hons+Research</span></div>
-          <div class="pg-fact"><span class="pg-fact-k">Duration</span><span class="pg-fact-v">3 Years · 6 Semesters</span></div>
-          <div class="pg-fact"><span class="pg-fact-k">Intake</span><span class="pg-fact-v">60 Seats</span></div>
-          <div class="pg-fact"><span class="pg-fact-k">Medium</span><span class="pg-fact-v">English</span></div>
-          <div class="pg-fact"><span class="pg-fact-k">Campus</span><span class="pg-fact-v">Pune Lavasa</span></div>
-          <div class="pg-fact"><span class="pg-fact-k">Open Until</span><span class="pg-fact-v" style="color:var(--cu-gold);">30 March 2026</span></div>
-        </div>
-      </div>
-      <div class="pg-apply-cta">
-        <div class="pg-apply-cta-lbl"><i class="bi bi-lightning-fill"></i>Apply for 2025&ndash;26</div>
-        <p>Limited seats. Submit your application before the deadline.</p>
-        <div class="pg-deadline-badge"><i class="bi bi-calendar-event"></i>Deadline: 30 March 2026</div>
-        <a href="https://espro.christuniversity.in/Application/" target="_blank" class="btn-pg-gold" style="width:100%;justify-content:center;font-size:.81rem;padding:.62rem 1rem;">Apply Online <i class="bi bi-arrow-right"></i></a>
-      </div>
-    </aside>
-
-    <!-- CONTENT -->
-    <main>
-
-      <!-- OVERVIEW -->
-      <section class="pg-section sr" id="overview">
-        <div class="pg-eyebrow">Programme Overview</div>
-        <h2 class="pg-title">About the Programme</h2>
-        <p class="pg-lead">Our BCA programme is designed to equip you with the skills and knowledge needed to thrive in the fast-paced world of computer science — covering both practical and theoretical aspects to prepare you for the challenges and opportunities ahead.</p>
-        <div class="ov-grid">
-          <div class="ov-card sr"><div class="ov-icon"><i class="bi bi-journal-code"></i></div><h6>Comprehensive Curriculum</h6><p>Solid CS foundation with flexibility to explore elective courses. Interdisciplinary studies in Mathematics, Statistics, and Financial Management broaden your horizons.</p></div>
-          <div class="ov-card sr"><div class="ov-icon"><i class="bi bi-pc-display-horizontal"></i></div><h6>Expert Faculty &amp; Facilities</h6><p>Learn from dedicated faculty. State-of-the-art labs with 24×7 access, AI/ML Lab, IoT Lab, and Bloomberg Terminal — world-class hands-on resources.</p></div>
-          <div class="ov-card sr"><div class="ov-icon"><i class="bi bi-briefcase-fill"></i></div><h6>Real-World Experience</h6><p>In-house projects, research and consultancy work. Your sixth-semester capstone can lead to groundbreaking contributions or even patents.</p></div>
-          <div class="ov-card sr"><div class="ov-icon"><i class="bi bi-globe2"></i></div><h6>Global Pathways</h6><p>Full-time industry internships or credit transfers at prestigious foreign universities through our student exchange programmes.</p></div>
-        </div>
-      </section>
-
-      <!-- WHY -->
-      <section class="pg-section sr" id="why">
-        <div class="pg-eyebrow">Why BCA at CHRIST Lavasa</div>
-        <h2 class="pg-title">Why Choose This Programme?</h2>
-        <div class="why-grid">
-          <div class="why-card"><div class="why-icon"><i class="bi bi-graph-up-arrow"></i></div><div><h6>Exciting Career Prospects</h6><p>Diverse pathways across software, data science, cybersecurity, cloud and emerging tech — backed by 100% placement support.</p></div></div>
-          <div class="why-card"><div class="why-icon"><i class="bi bi-laptop"></i></div><div><h6>Remote-Ready Learning</h6><p>Digital-first skills and tools that prepare you for the flexible, global tech work environments of today.</p></div></div>
-          <div class="why-card"><div class="why-icon"><i class="bi bi-cpu"></i></div><div><h6>Comprehensive CS Education</h6><p>Deep education in Computer Science and Technology, setting the stage for success across all verticals of the IT industry.</p></div></div>
-          <div class="why-card"><div class="why-icon"><i class="bi bi-people-fill"></i></div><div><h6>Teamwork &amp; Communication</h6><p>Strong emphasis on communication and collaborative skills, preparing you for modern tech environments.</p></div></div>
-          <div class="why-card"><div class="why-icon"><i class="bi bi-rocket-takeoff"></i></div><div><h6>Entrepreneurship Focus</h6><p>Launch your own tech ventures with mentorship from our Innovation and Incubation Cell.</p></div></div>
-          <div class="why-card"><div class="why-icon"><i class="bi bi-tree-fill"></i></div><div><h6>Lavasa Campus</h6><p>Personal growth on India's most scenic university campus, built for holistic development in a dynamic environment.</p></div></div>
-        </div>
-      </section>
-
-      <!-- OUTCOMES -->
-      <section class="pg-section sr" id="outcomes">
-        <div class="pg-eyebrow">Learning Outcomes</div>
-        <h2 class="pg-title">What You Will Learn</h2>
-        <div class="out-grid">
-          <div class="out-tile"><i class="bi bi-lightbulb-fill"></i><span>Critical Thinking &amp; Troubleshooting</span></div>
-          <div class="out-tile"><i class="bi bi-code-slash"></i><span>Web Development Proficiency</span></div>
-          <div class="out-tile"><i class="bi bi-window-stack"></i><span>Application Design &amp; Development</span></div>
-          <div class="out-tile"><i class="bi bi-bar-chart-fill"></i><span>Proficiency in Data Analysis</span></div>
-          <div class="out-tile"><i class="bi bi-person-check-fill"></i><span>Interpersonal &amp; Professional Skills</span></div>
-          <div class="out-tile"><i class="bi bi-journal-bookmark-fill"></i><span>Lifelong Learning &amp; Research Aptitude</span></div>
-        </div>
-      </section>
-
-      <!-- CURRICULUM -->
-      <section class="pg-section sr" id="curriculum">
-        <div class="pg-eyebrow">Academic Curriculum</div>
-        <h2 class="pg-title">Programme Structure</h2>
-        <p class="pg-lead">Six semesters building from programming fundamentals to advanced specialisations and a capstone research project.</p>
-        <div class="curr-tabs">
-          <button class="curr-tab active" onclick="showYear(1,this)">Year 1</button>
-          <button class="curr-tab" onclick="showYear(2,this)">Year 2</button>
-          <button class="curr-tab" onclick="showYear(3,this)">Year 3</button>
-        </div>
-        <div class="curr-pane active" id="year-1">
-          <div class="curr-sem"><div class="curr-sem-hd" onclick="toggleSem(this)"><h6><i class="bi bi-book"></i>Semester I — Foundations</h6><span class="curr-sem-meta"><span>6 Subjects · 19 Credits</span><i class="bi bi-chevron-down curr-sem-toggle"></i></span></div><div class="curr-sem-body"><div class="curr-row"><span class="curr-code core">BCA101</span><span class="curr-name">Programming in C</span><span class="curr-cr">4 Credits</span></div><div class="curr-row"><span class="curr-code core">BCA102</span><span class="curr-name">Mathematics for Computing</span><span class="curr-cr">4 Credits</span></div><div class="curr-row"><span class="curr-code core">BCA103</span><span class="curr-name">Digital Fundamentals</span><span class="curr-cr">4 Credits</span></div><div class="curr-row"><span class="curr-code core">BCA104</span><span class="curr-name">Communication Skills</span><span class="curr-cr">3 Credits</span></div><div class="curr-row"><span class="curr-code elec">BCA1E1</span><span class="curr-name">Environmental Studies</span><span class="curr-cr">2 Credits</span></div><div class="curr-row"><span class="curr-code core">BCA105</span><span class="curr-name">Programming Lab (C)</span><span class="curr-cr">2 Credits</span></div><div class="curr-legend"><span style="color:#166534">● Core</span> &nbsp;&nbsp;<span style="color:#854d0e">◆ Elective</span></div></div></div>
-          <div class="curr-sem"><div class="curr-sem-hd" onclick="toggleSem(this)"><h6><i class="bi bi-book"></i>Semester II — OOP &amp; Web</h6><span class="curr-sem-meta"><span>6 Subjects · 20 Credits</span><i class="bi bi-chevron-down curr-sem-toggle"></i></span></div><div class="curr-sem-body"><div class="curr-row"><span class="curr-code core">BCA201</span><span class="curr-name">Object-Oriented Programming with Java</span><span class="curr-cr">4 Credits</span></div><div class="curr-row"><span class="curr-code core">BCA202</span><span class="curr-name">Data Structures</span><span class="curr-cr">4 Credits</span></div><div class="curr-row"><span class="curr-code core">BCA203</span><span class="curr-name">Web Technologies (HTML, CSS, JS)</span><span class="curr-cr">4 Credits</span></div><div class="curr-row"><span class="curr-code core">BCA204</span><span class="curr-name">Statistics for Computing</span><span class="curr-cr">3 Credits</span></div><div class="curr-row"><span class="curr-code elec">BCA2E1</span><span class="curr-name">Financial Management</span><span class="curr-cr">3 Credits</span></div><div class="curr-row"><span class="curr-code core">BCA205</span><span class="curr-name">Web &amp; Java Lab</span><span class="curr-cr">2 Credits</span></div><div class="curr-legend"><span style="color:#166534">● Core</span> &nbsp;&nbsp;<span style="color:#854d0e">◆ Elective</span></div></div></div>
-        </div>
-        <div class="curr-pane" id="year-2">
-          <div class="curr-sem"><div class="curr-sem-hd" onclick="toggleSem(this)"><h6><i class="bi bi-book"></i>Semester III — Core CS</h6><span class="curr-sem-meta"><span>6 Subjects · 20 Credits</span><i class="bi bi-chevron-down curr-sem-toggle"></i></span></div><div class="curr-sem-body"><div class="curr-row"><span class="curr-code core">BCA301</span><span class="curr-name">Database Management Systems</span><span class="curr-cr">4 Credits</span></div><div class="curr-row"><span class="curr-code core">BCA302</span><span class="curr-name">Operating Systems</span><span class="curr-cr">4 Credits</span></div><div class="curr-row"><span class="curr-code core">BCA303</span><span class="curr-name">Python Programming</span><span class="curr-cr">4 Credits</span></div><div class="curr-row"><span class="curr-code core">BCA304</span><span class="curr-name">Software Engineering</span><span class="curr-cr">3 Credits</span></div><div class="curr-row"><span class="curr-code elec">BCA3E1</span><span class="curr-name">Computer Networks</span><span class="curr-cr">3 Credits</span></div><div class="curr-row"><span class="curr-code core">BCA305</span><span class="curr-name">DBMS &amp; Python Lab</span><span class="curr-cr">2 Credits</span></div><div class="curr-legend"><span style="color:#166534">● Core</span> &nbsp;&nbsp;<span style="color:#854d0e">◆ Elective</span></div></div></div>
-          <div class="curr-sem"><div class="curr-sem-hd" onclick="toggleSem(this)"><h6><i class="bi bi-book"></i>Semester IV — Advanced Development</h6><span class="curr-sem-meta"><span>6 Subjects · 20 Credits</span><i class="bi bi-chevron-down curr-sem-toggle"></i></span></div><div class="curr-sem-body"><div class="curr-row"><span class="curr-code core">BCA401</span><span class="curr-name">Mobile Application Development</span><span class="curr-cr">4 Credits</span></div><div class="curr-row"><span class="curr-code core">BCA402</span><span class="curr-name">Data Analytics with R</span><span class="curr-cr">4 Credits</span></div><div class="curr-row"><span class="curr-code core">BCA403</span><span class="curr-name">Computer Organisation &amp; Architecture</span><span class="curr-cr">3 Credits</span></div><div class="curr-row"><span class="curr-code elec">BCA4E1</span><span class="curr-name">Cybersecurity Fundamentals</span><span class="curr-cr">3 Credits</span></div><div class="curr-row"><span class="curr-code core">BCA404</span><span class="curr-name">Mini Project</span><span class="curr-cr">4 Credits</span></div><div class="curr-row"><span class="curr-code core">BCA405</span><span class="curr-name">Mobile &amp; Analytics Lab</span><span class="curr-cr">2 Credits</span></div><div class="curr-legend"><span style="color:#166534">● Core</span> &nbsp;&nbsp;<span style="color:#854d0e">◆ Elective</span></div></div></div>
-        </div>
-        <div class="curr-pane" id="year-3">
-          <div class="curr-sem"><div class="curr-sem-hd" onclick="toggleSem(this)"><h6><i class="bi bi-book"></i>Semester V — Specialisation</h6><span class="curr-sem-meta"><span>6 Subjects · 19 Credits</span><i class="bi bi-chevron-down curr-sem-toggle"></i></span></div><div class="curr-sem-body"><div class="curr-row"><span class="curr-code core">BCA501</span><span class="curr-name">Artificial Intelligence &amp; Machine Learning</span><span class="curr-cr">4 Credits</span></div><div class="curr-row"><span class="curr-code core">BCA502</span><span class="curr-name">Cloud Computing (AWS/Azure)</span><span class="curr-cr">4 Credits</span></div><div class="curr-row"><span class="curr-code core">BCA503</span><span class="curr-name">Blockchain Technology</span><span class="curr-cr">3 Credits</span></div><div class="curr-row"><span class="curr-code elec">BCA5E1</span><span class="curr-name">IoT &amp; Embedded Systems</span><span class="curr-cr">3 Credits</span></div><div class="curr-row"><span class="curr-code elec">BCA5E2</span><span class="curr-name">DevOps &amp; Agile Practices</span><span class="curr-cr">3 Credits</span></div><div class="curr-row"><span class="curr-code core">BCA504</span><span class="curr-name">AI/ML Lab</span><span class="curr-cr">2 Credits</span></div><div class="curr-legend"><span style="color:#166534">● Core</span> &nbsp;&nbsp;<span style="color:#854d0e">◆ Elective</span></div></div></div>
-          <div class="curr-sem"><div class="curr-sem-hd" onclick="toggleSem(this)"><h6><i class="bi bi-book"></i>Semester VI — Capstone &amp; Research</h6><span class="curr-sem-meta"><span>5 Subjects · 24 Credits</span><i class="bi bi-chevron-down curr-sem-toggle"></i></span></div><div class="curr-sem-body"><div class="curr-row"><span class="curr-code core">BCA601</span><span class="curr-name">Capstone Project / Industry Internship</span><span class="curr-cr">8 Credits</span></div><div class="curr-row"><span class="curr-code core">BCA602</span><span class="curr-name">Research Methodology (Hons. Research)</span><span class="curr-cr">4 Credits</span></div><div class="curr-row"><span class="curr-code core">BCA603</span><span class="curr-name">Emerging Technologies &amp; Ethics</span><span class="curr-cr">3 Credits</span></div><div class="curr-row"><span class="curr-code elec">BCA6E1</span><span class="curr-name">Entrepreneurship &amp; Start-up Management</span><span class="curr-cr">3 Credits</span></div><div class="curr-row"><span class="curr-code core">BCA604</span><span class="curr-name">Dissertation (Honours with Research)</span><span class="curr-cr">6 Credits</span></div><div class="curr-legend"><span style="color:#166534">● Core</span> &nbsp;&nbsp;<span style="color:#854d0e">◆ Elective</span></div></div></div>
-        </div>
-      </section>
-
-      <!-- ELIGIBILITY -->
-      <section class="pg-section sr" id="eligibility">
-        <div class="pg-eyebrow">Admissions</div>
-        <h2 class="pg-title">Eligibility &amp; Fee Structure</h2>
-        <div class="elig-grid">
-          <div class="elig-card"><h6 class="elig-hd"><i class="bi bi-patch-check-fill"></i>Eligibility Criteria</h6><ul class="elig-list"><li><i class="bi bi-check2-circle"></i>10+2 from a recognised board with Mathematics</li><li><i class="bi bi-check2-circle"></i>Minimum 50% aggregate in qualifying examination</li><li><i class="bi bi-check2-circle"></i>CUCET / CUET entrance test score required</li><li><i class="bi bi-check2-circle"></i>Personal interview with department panel</li><li><i class="bi bi-check2-circle"></i>Open: <strong>03-Dec-2025</strong> — Deadline: <strong>30-Mar-2026</strong></li></ul></div>
-          <div class="elig-card"><h6 class="elig-hd"><i class="bi bi-currency-rupee"></i>Fee Structure</h6><div class="fee-row"><span>Tuition Fee</span><span>₹1,20,000 / year</span></div><div class="fee-row"><span>Development Fee</span><span>₹15,000 / year</span></div><div class="fee-row"><span>Hostel Fee</span><span>₹1,50,000 – ₹2,00,000 / year</span></div><div class="fee-row"><span>Examination Fee</span><span>As per university norms</span></div><p class="fee-note"><i class="bi bi-info-circle"></i>Scholarships available for meritorious students. Fee subject to revision.</p><a href="https://espro.christuniversity.in/Application/" target="_blank" class="btn-pg-gold mt-3" style="width:100%;justify-content:center;font-size:.8rem;padding:.58rem 1rem;">Apply &amp; Check Scholarships <i class="bi bi-arrow-right"></i></a></div>
-        </div>
-      </section>
-
-      <!-- CAREERS -->
-      <section class="pg-section sr" id="careers">
-        <div class="pg-eyebrow">After Graduation</div>
-        <h2 class="pg-title">Career Paths</h2>
-        <div class="career-grid">
-          <div class="career-card"><i class="bi bi-code-slash"></i><span>Software Developer</span></div>
-          <div class="career-card"><i class="bi bi-globe"></i><span>Web Developer</span></div>
-          <div class="career-card"><i class="bi bi-database-fill"></i><span>Database Admin</span></div>
-          <div class="career-card"><i class="bi bi-shield-lock-fill"></i><span>Cybersecurity Analyst</span></div>
-          <div class="career-card"><i class="bi bi-bar-chart-fill"></i><span>Data Scientist</span></div>
-          <div class="career-card"><i class="bi bi-cloud-fill"></i><span>Cloud Engineer</span></div>
-          <div class="career-card"><i class="bi bi-hdd-network-fill"></i><span>Network Administrator</span></div>
-          <div class="career-card"><i class="bi bi-mortarboard-fill"></i><span>Higher Education</span></div>
-          <div class="career-card"><i class="bi bi-person-gear"></i><span>IT Consultant</span></div>
-          <div class="career-card"><i class="bi bi-bug-fill"></i><span>Software Tester</span></div>
-          <div class="career-card"><i class="bi bi-building"></i><span>Government Sector</span></div>
-          <div class="career-card"><i class="bi bi-lightbulb-fill"></i><span>Entrepreneur</span></div>
-        </div>
-        <div class="pg-eyebrow mt-2 mb-3">Our Alumni Work At</div>
-        <div class="d-flex flex-wrap gap-2">
-          <span class="alumni-tag">JP Morgan Chase</span><span class="alumni-tag">Google</span><span class="alumni-tag">ServiceNow Dublin</span><span class="alumni-tag">Deloitte</span><span class="alumni-tag">HSBC UK</span><span class="alumni-tag">Yes Bank</span><span class="alumni-tag">Bajaj Allianz</span><span class="alumni-tag">RBI</span><span class="alumni-tag">4cRisk.ai</span><span class="alumni-tag">Thomson Reuters</span><span class="alumni-tag">CEGIS</span><span class="alumni-tag">Binghamton University USA</span>
-        </div>
-      </section>
-
-      <!-- ROADMAP -->
-      <section class="pg-section sr" id="roadmap">
-        <div class="pg-eyebrow">Personalised Path</div>
-        <h2 class="pg-title">Your BCA Career Roadmap</h2>
-        <p class="pg-lead">Pick your interest area and see exactly how your 3-year BCA journey maps to a career.</p>
-        <div class="rm-btns">
-          <button class="rm-btn active" onclick="showTrack('sw',this)">💻 Software Dev</button>
-          <button class="rm-btn" onclick="showTrack('ds',this)">📊 Data Science</button>
-          <button class="rm-btn" onclick="showTrack('cy',this)">🔐 Cybersecurity</button>
-          <button class="rm-btn" onclick="showTrack('wc',this)">🌐 Web &amp; Cloud</button>
-        </div>
-        <div class="rm-track active" id="rt-sw"><div class="rm-timeline"><div class="rm-step"><div class="rm-node y1">Y1</div><div class="rm-content"><div class="rm-yr">Year 1 — Foundations</div><div class="rm-subs">C Programming · OOP with Java · Data Structures · Mathematics</div><div class="rm-milestone"><i class="bi bi-trophy-fill"></i>Build your first console application</div></div></div><div class="rm-step"><div class="rm-node y2">Y2</div><div class="rm-content"><div class="rm-yr">Year 2 — Core Skills</div><div class="rm-subs">Algorithms · Operating Systems · Python · Software Engineering · Mini Project</div><div class="rm-milestone"><i class="bi bi-trophy-fill"></i>Complete a full-stack mini project</div></div></div><div class="rm-step"><div class="rm-node y3">Y3</div><div class="rm-content"><div class="rm-yr">Year 3 — Specialisation</div><div class="rm-subs">AI/ML · Cloud Computing · Capstone Project · Industry Internship</div><div class="rm-milestone"><i class="bi bi-trophy-fill"></i>Ship a live product or research paper</div></div></div></div><div class="rm-outcome"><div class="rm-outcome-lbl">🎯 You'll be ready for</div><div class="rm-jobs"><span class="rm-job">Software Developer</span><span class="rm-job">Backend Engineer</span><span class="rm-job">Mobile App Developer</span><span class="rm-job">Full Stack Developer</span></div><div class="rm-salary">Starting: <strong>₹4–8 LPA</strong> &nbsp;·&nbsp; Senior (5 yrs): <strong>₹15–35 LPA</strong></div></div></div>
-        <div class="rm-track" id="rt-ds"><div class="rm-timeline"><div class="rm-step"><div class="rm-node y1">Y1</div><div class="rm-content"><div class="rm-yr">Year 1 — Foundations</div><div class="rm-subs">Statistics · Mathematics · Python Basics · Problem Solving</div><div class="rm-milestone"><i class="bi bi-trophy-fill"></i>Analyse your first real dataset</div></div></div><div class="rm-step"><div class="rm-node y2">Y2</div><div class="rm-content"><div class="rm-yr">Year 2 — Analytics Core</div><div class="rm-subs">Data Structures · DBMS · Python Advanced · Data Analytics with R</div><div class="rm-milestone"><i class="bi bi-trophy-fill"></i>Build a predictive model for a real problem</div></div></div><div class="rm-step"><div class="rm-node y3">Y3</div><div class="rm-content"><div class="rm-yr">Year 3 — Machine Learning</div><div class="rm-subs">AI/ML · Deep Learning · Capstone Research · Bloomberg Terminal</div><div class="rm-milestone"><i class="bi bi-trophy-fill"></i>Publish research or win a Kaggle competition</div></div></div></div><div class="rm-outcome"><div class="rm-outcome-lbl">🎯 You'll be ready for</div><div class="rm-jobs"><span class="rm-job">Data Analyst</span><span class="rm-job">ML Engineer</span><span class="rm-job">Data Scientist</span><span class="rm-job">Quantitative Analyst</span></div><div class="rm-salary">Starting: <strong>₹5–9 LPA</strong> &nbsp;·&nbsp; Senior (5 yrs): <strong>₹18–40 LPA</strong></div></div></div>
-        <div class="rm-track" id="rt-cy"><div class="rm-timeline"><div class="rm-step"><div class="rm-node y1">Y1</div><div class="rm-content"><div class="rm-yr">Year 1 — Foundations</div><div class="rm-subs">Digital Fundamentals · Computer Organisation · Networking Basics · C</div><div class="rm-milestone"><i class="bi bi-trophy-fill"></i>Set up your first home lab environment</div></div></div><div class="rm-step"><div class="rm-node y2">Y2</div><div class="rm-content"><div class="rm-yr">Year 2 — Networks &amp; Systems</div><div class="rm-subs">Operating Systems · Computer Networks · Cybersecurity Fundamentals · Python</div><div class="rm-milestone"><i class="bi bi-trophy-fill"></i>Complete a CTF (Capture The Flag) challenge</div></div></div><div class="rm-step"><div class="rm-node y3">Y3</div><div class="rm-content"><div class="rm-yr">Year 3 — Specialisation</div><div class="rm-subs">Cloud Security · Blockchain · Ethical Hacking · Capstone Project</div><div class="rm-milestone"><i class="bi bi-trophy-fill"></i>Earn CEH or CompTIA Security+ certification</div></div></div></div><div class="rm-outcome"><div class="rm-outcome-lbl">🎯 You'll be ready for</div><div class="rm-jobs"><span class="rm-job">Security Analyst</span><span class="rm-job">Penetration Tester</span><span class="rm-job">SOC Analyst</span><span class="rm-job">Network Security Engineer</span></div><div class="rm-salary">Starting: <strong>₹5–10 LPA</strong> &nbsp;·&nbsp; Senior (5 yrs): <strong>₹20–50 LPA</strong></div></div></div>
-        <div class="rm-track" id="rt-wc"><div class="rm-timeline"><div class="rm-step"><div class="rm-node y1">Y1</div><div class="rm-content"><div class="rm-yr">Year 1 — Foundations</div><div class="rm-subs">HTML · CSS · JavaScript · OOP · Problem Solving</div><div class="rm-milestone"><i class="bi bi-trophy-fill"></i>Launch your first personal website</div></div></div><div class="rm-step"><div class="rm-node y2">Y2</div><div class="rm-content"><div class="rm-yr">Year 2 — Full Stack</div><div class="rm-subs">DBMS · Python · Mobile App Dev · Software Engineering · React/Node</div><div class="rm-milestone"><i class="bi bi-trophy-fill"></i>Build and deploy a full-stack web application</div></div></div><div class="rm-step"><div class="rm-node y3">Y3</div><div class="rm-content"><div class="rm-yr">Year 3 — Cloud &amp; Scale</div><div class="rm-subs">Cloud Computing (AWS/Azure) · DevOps · IoT · Capstone Project</div><div class="rm-milestone"><i class="bi bi-trophy-fill"></i>Get AWS Cloud Practitioner certified</div></div></div></div><div class="rm-outcome"><div class="rm-outcome-lbl">🎯 You'll be ready for</div><div class="rm-jobs"><span class="rm-job">Frontend Developer</span><span class="rm-job">Cloud Engineer</span><span class="rm-job">DevOps Engineer</span><span class="rm-job">UI/UX Developer</span></div><div class="rm-salary">Starting: <strong>₹4–8 LPA</strong> &nbsp;·&nbsp; Senior (5 yrs): <strong>₹15–30 LPA</strong></div></div></div>
-      </section>
-
-      <!-- HOD -->
-      <section class="pg-section sr" id="hod">
-        <div class="pg-eyebrow">From the Department</div>
-        <h2 class="pg-title">Message from HOD</h2>
-        <div class="hod-card">
-          <div class="hod-photo-wrap">
-            <img src="https://lavasa.christuniversity.in/uploads/faculty/thumbs/DED78BC3-69DB-4BC0-A8B2-8D0D07B1C09A_20230831043014.jpg" alt="Dr Lija Jacob" class="hod-photo">
-            <div class="hod-name">Dr Lija Jacob</div>
-            <div class="hod-role">Head of Department<br>Computer Science</div>
-          </div>
-          <div class="hod-msg">
-            <p>Welcome to the Department of Computer Science at CHRIST (Deemed to be University), Pune Lavasa Campus. Our BCA programme is built on the philosophy of creating a dynamic and experiential learning environment that goes beyond textbooks.</p>
-            <p>We provide 24×7 campus access to our state-of-the-art labs, enabling students to work on real-world projects, industry collaborations, and cutting-edge research. Our faculty bring both academic excellence and industry experience to the classroom.</p>
-            <p>I warmly invite you to be part of our vibrant academic community — where we aim to shape the future with technology, developing not just skilled programmers, but responsible, creative, and globally aware professionals.</p>
-            <div class="hod-sig">— Dr Lija Jacob, HOD, Department of Computer Science</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- TESTIMONIALS -->
-      <section class="pg-section sr" id="testimonials">
-        <div class="pg-eyebrow">Student Stories</div>
-        <h2 class="pg-title">What Our Students Say</h2>
-        <div class="testi-grid">
-          <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"The BCA programme at CHRIST Lavasa gave me not just technical skills but the confidence to face real-world challenges. The faculty and infrastructure are world-class."</p><div class="testi-author"><img src="https://lavasa.christuniversity.in/uploads/testimonial/thumbs/23BCA076_Oshin_Benny_Anto_20230917061012_20230917061012.jpg" alt="Oshin Benny Anto" class="testi-photo"><div><strong>Oshin Benny Anto</strong><span>BCA Graduate, CHRIST Lavasa</span></div></div></div>
-          <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"The hands-on projects and industry exposure made my transition to the tech industry seamless. The scenic Lavasa campus adds to the whole experience!"</p><div class="testi-author"><img src="https://lavasa.christuniversity.in/uploads/testimonial/thumbs/Anushree_chakraborty_20230917062140_20230917062140.jpg" alt="Anushree Chakraborty" class="testi-photo"><div><strong>Anushree Chakraborty</strong><span>BCA Graduate, CHRIST Lavasa</span></div></div></div>
-          <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"From the Bloomberg Terminal to AI labs — every resource here is designed to prepare you for the industry. The placement support is truly exceptional."</p><div class="testi-author"><img src="https://lavasa.christuniversity.in/uploads/testimonial/thumbs/Nihal_Thapa_20230917063424_20230917063424.jpg" alt="Nihal Thapa" class="testi-photo"><div><strong>Nihal Thapa</strong><span>BCA Graduate, CHRIST Lavasa</span></div></div></div>
-          <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"The capstone project and internship opportunities here are unmatched. I was placed at Yes Bank right out of college — the training truly pays off."</p><div class="testi-author"><img src="https://lavasa.christuniversity.in/uploads/testimonial/thumbs/Jay_Bharat_Mehta_20231114120555_20231114120555.jpg" alt="Jay Bharat Mehta" class="testi-photo"><div><strong>Jay Bharat Mehta</strong><span>Placed at Yes Bank</span></div></div></div>
-        </div>
-      </section>
-
-      <!-- ADMISSION PROCESS -->
-      <section class="pg-section sr" id="process">
-        <div class="pg-eyebrow">How to Apply</div>
-        <h2 class="pg-title">Admission Process</h2>
-        <div class="process-row">
-          <div class="process-step"><div class="process-num">1</div><div class="process-label">Register Online</div><div class="process-desc">Create your applicant profile at espro.christuniversity.in</div></div>
-          <div class="process-arrow"><i class="bi bi-arrow-right"></i></div>
-          <div class="process-step"><div class="process-num">2</div><div class="process-label">CUCET / CUET</div><div class="process-desc">Appear for the Common University Entrance Test</div></div>
-          <div class="process-arrow"><i class="bi bi-arrow-right"></i></div>
-          <div class="process-step"><div class="process-num">3</div><div class="process-label">Interview</div><div class="process-desc">Personal interview with the department panel</div></div>
-          <div class="process-arrow"><i class="bi bi-arrow-right"></i></div>
-          <div class="process-step"><div class="process-num">4</div><div class="process-label">Offer &amp; Enrolment</div><div class="process-desc">Receive admission offer and complete enrolment</div></div>
-        </div>
-        <div class="process-cta">
-          <div>
-            <div style="font-size:.7rem;font-weight:700;color:var(--cu-gold);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.35rem;"><i class="bi bi-calendar-event me-1"></i>Deadline: 30 March 2026</div>
-            <div style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--cu-navy);">Ready to join CHRIST Lavasa?</div>
-          </div>
-          <div class="d-flex gap-3 flex-wrap">
-            <a href="https://espro.christuniversity.in/Application/" target="_blank" class="btn-pg-gold" style="font-size:.86rem;">Apply Now 2025&ndash;26 <i class="bi bi-arrow-right"></i></a>
-            <a href="https://lavasa.christuniversity.in/contact-us" target="_blank" class="btn-pg-blue" style="font-size:.86rem;">Contact Admissions</a>
-          </div>
-        </div>
-      </section>
-
-    </main>
-  </div>
-</div>
-
-<!-- RESOURCES BAR -->
-<div class="res-bar">
-  <div class="container-xl">
-    <div class="res-inner">
-      <a href="https://lavasalibrary.christuniversity.in/" target="_blank" class="res-link"><div class="res-link-ic"><i class="bi bi-book"></i></div><div><div class="res-link-nm">Library</div><div class="res-link-ds">Digital &amp; physical resources</div></div></a>
-      <a href="https://lavasa.christuniversity.in/it-regulations" target="_blank" class="res-link"><div class="res-link-ic"><i class="bi bi-pc-display"></i></div><div><div class="res-link-nm">IT Services</div><div class="res-link-ds">Labs, internet &amp; support</div></div></a>
-      <a href="https://christuniversity.in/hostel/main-campus/hostel-and-dining" target="_blank" class="res-link"><div class="res-link-ic"><i class="bi bi-house-fill"></i></div><div><div class="res-link-nm">Hostel &amp; Dining</div><div class="res-link-ds">Residential facilities</div></div></a>
-      <a href="https://lavasa.christuniversity.in/doctors-desk" target="_blank" class="res-link"><div class="res-link-ic"><i class="bi bi-heart-pulse-fill"></i></div><div><div class="res-link-nm">Medical</div><div class="res-link-ds">Health &amp; wellness</div></div></a>
-      <a href="https://espro.christuniversity.in" target="_blank" class="res-link"><div class="res-link-ic"><i class="bi bi-person-badge-fill"></i></div><div><div class="res-link-nm">Student Portal</div><div class="res-link-ds">Results &amp; schedule</div></div></a>
-      <a href="https://lavasa.christuniversity.in/center/C/hosteldiningCUlavasa" target="_blank" class="res-link"><div class="res-link-ic"><i class="bi bi-bus-front-fill"></i></div><div><div class="res-link-nm">Transport</div><div class="res-link-ds">Campus shuttle info</div></div></a>
-    </div>
-  </div>
-</div>
-
-<div id="cu-footer-placeholder"></div>
-
-<div class="mob-overlay" id="mobOverlay"></div>
-
-<!-- MOBILE DRAWER -->
-<div class="mob-drawer" id="mobDrawer" role="dialog" aria-modal="true" aria-label="Main Menu">
-
-  <!-- Header -->
-  <div class="mob-drawer-head">
-    <span class="mob-drawer-title">Main Menu</span>
-    <button class="mob-drawer-close" id="mobDrawerClose"><i class="bi bi-x-lg"></i></button>
-  </div>
-
-  <!-- Quick action pills -->
-  <div class="mob-quick">
-    <a href="#" class="mob-quick-btn primary"><i class="bi bi-mortarboard me-1"></i>Admission</a>
-    <a href="#" class="mob-quick-btn secondary"><i class="bi bi-file-text me-1"></i>Examination</a>
-  </div>
-
-  <!-- Nav accordion -->
-  <div class="mob-nav-scroll">
-
-    <!-- About Us -->
-    <div class="mob-nav-item">
-      <button class="mob-nav-btn" data-mob-acc="about">
-        About Us
-        <span class="mob-chevron"><i class="bi bi-chevron-down"></i></span>
-      </button>
-      <div class="mob-sub" id="mob-acc-about">
-        <a href="#"><i class="bi bi-clock-history"></i>History &amp; Milestones</a>
-        <a href="#"><i class="bi bi-image"></i>Logo &amp; Anthem</a>
-        <a href="#"><i class="bi bi-person-circle"></i>Founder</a>
-        <a href="#"><i class="bi bi-bullseye"></i>Vision and Mission</a>
-        <a href="#"><i class="bi bi-chat-quote"></i>Message from Vice Chancellor</a>
-        <a href="#"><i class="bi bi-chat-quote"></i>Message from Director</a>
-        <a href="#"><i class="bi bi-file-earmark-text"></i>Mandatory Disclosure</a>
-        <a href="#"><i class="bi bi-mortarboard"></i>Graduate Attributes</a>
-        <a href="#"><i class="bi bi-diagram-3"></i>Governance</a>
-        <a href="#"><i class="bi bi-handshake"></i>Recognitions and Collaborations</a>
-        <a href="#"><i class="bi bi-buildings"></i>Administration</a>
-        <a href="#" style="color:var(--cu-gold)!important;"><i class="bi bi-unlock" style="color:var(--cu-gold)!important;"></i>Disclosures</a>
-        <a href="#"><i class="bi bi-newspaper"></i>Articles by Faculty in Media</a>
-        <a href="#"><i class="bi bi-trophy"></i>Recognitions and Awards</a>
-        <a href="#"><i class="bi bi-patch-check"></i>NEP at CHRIST (Deemed to be University)</a>
-        <a href="#"><i class="bi bi-signpost-split"></i>Guidelines for Entry and Exit into Bachelor and Master Level Programmes</a>
-        <a href="#"><i class="bi bi-people"></i>Advisory Board Members</a>
-        <a href="#"><i class="bi bi-globe2"></i>International Academic Collaborations</a>
-        <a href="#"><i class="bi bi-bar-chart-steps"></i>Ranking</a>
-        <a href="#"><i class="bi bi-award"></i>Accreditation</a>
-      </div>
-    </div>
-
-    <!-- Academics -->
-    <div class="mob-nav-item">
-      <button class="mob-nav-btn" data-mob-acc="academics">
-        Academics
-        <span class="mob-chevron"><i class="bi bi-chevron-down"></i></span>
-      </button>
-      <div class="mob-sub" id="mob-acc-academics">
-        <a href="school-of-law.html"><i class="bi bi-bank"></i>School of Law</a>
-        <a href="school-of-business.html"><i class="bi bi-bar-chart"></i>Business &amp; Management</a>
-        <a href="school-of-commerce.html"><i class="bi bi-graph-up"></i>Commerce &amp; Finance</a>
-        <a href="school-of-sciences.html"><i class="bi bi-cpu"></i>School of Sciences</a>
-        <a href="school-of-humanities.html"><i class="bi bi-book"></i>Humanities &amp; Arts</a>
-        <a href="index.html#programmes"><i class="bi bi-grid"></i>All Programmes</a>
-      </div>
-    </div>
-
-    <!-- Research -->
-    <div class="mob-nav-item">
-      <button class="mob-nav-btn" data-mob-acc="research">
-        Research
-        <span class="mob-chevron"><i class="bi bi-chevron-down"></i></span>
-      </button>
-      <div class="mob-sub" id="mob-acc-research">
-        <a href="#"><i class="bi bi-journal-text"></i>Research Centres</a>
-        <a href="#"><i class="bi bi-file-earmark-text"></i>Publications</a>
-        <a href="#"><i class="bi bi-lightbulb"></i>Innovation &amp; Incubation</a>
-        <a href="#"><i class="bi bi-people"></i>PhD Programmes</a>
-      </div>
-    </div>
-
-    <!-- Student Life -->
-    <div class="mob-nav-item">
-      <button class="mob-nav-btn" data-mob-acc="studentlife">
-        Student Life
-        <span class="mob-chevron"><i class="bi bi-chevron-down"></i></span>
-      </button>
-      <div class="mob-sub" id="mob-acc-studentlife">
-        <a href="index.html#campusLife"><i class="bi bi-house-heart"></i>Campus Life</a>
-        <a href="#"><i class="bi bi-globe2"></i>International Engagement</a>
-        <a href="#"><i class="bi bi-heart-pulse"></i>Mental Wellness</a>
-        <a href="#"><i class="bi bi-trophy"></i>Sports &amp; Adventure</a>
-        <a href="#"><i class="bi bi-people"></i>Clubs &amp; Activities</a>
-        <a href="index.html#gallery"><i class="bi bi-images"></i>Photo Gallery</a>
-      </div>
-    </div>
-
-    <!-- E-Services -->
-    <div class="mob-nav-item">
-      <button class="mob-nav-btn" data-mob-acc="eservices">
-        E-Services
-        <span class="mob-chevron"><i class="bi bi-chevron-down"></i></span>
-      </button>
-      <div class="mob-sub" id="mob-acc-eservices">
-        <a href="#"><i class="bi bi-person-badge"></i>Student Portal</a>
-        <a href="#"><i class="bi bi-laptop"></i>IT Services</a>
-        <a href="#"><i class="bi bi-book"></i>Library</a>
-        <a href="#"><i class="bi bi-file-earmark-check"></i>Exam Portal</a>
-        <a href="#"><i class="bi bi-envelope"></i>Email Login</a>
-      </div>
-    </div>
-
-    <!-- Campuses -->
-    <div class="mob-nav-item">
-      <button class="mob-nav-btn" data-mob-acc="campuses">
-        Campuses
-        <span class="mob-chevron"><i class="bi bi-chevron-down"></i></span>
-      </button>
-      <div class="mob-sub" id="mob-acc-campuses">
-        <a href="#" style="color:var(--cu-gold);font-weight:600;"><i class="bi bi-geo-alt-fill"></i>Pune Lavasa (Current)</a>
-        <a href="https://christuniversity.in" target="_blank"><i class="bi bi-building"></i>Bangalore Central</a>
-        <a href="https://kengeri.christuniversity.in" target="_blank"><i class="bi bi-building"></i>Bangalore Kengeri</a>
-        <a href="https://brc.christuniversity.in" target="_blank"><i class="bi bi-building"></i>Bangalore BGR (BRC)</a>
-        <a href="https://byc.christuniversity.in" target="_blank"><i class="bi bi-building"></i>Bangalore BYC</a>
-        <a href="https://delhi.christuniversity.in" target="_blank"><i class="bi bi-building"></i>Delhi NCR</a>
-      </div>
-    </div>
-
-    <!-- Visitors -->
-    <div class="mob-nav-item">
-      <button class="mob-nav-btn" data-mob-acc="visitors">
-        Visitors
-        <span class="mob-chevron"><i class="bi bi-chevron-down"></i></span>
-      </button>
-      <div class="mob-sub" id="mob-acc-visitors">
-        <a href="#"><i class="bi bi-door-open"></i>Open Day</a>
-        <a href="#"><i class="bi bi-map"></i>Campus Tour</a>
-        <a href="#"><i class="bi bi-geo-alt"></i>How to Reach</a>
-        <a href="#"><i class="bi bi-telephone"></i>Contact Us</a>
-      </div>
-    </div>
-
-    <!-- Plain links -->
-    <a href="#" class="mob-nav-plain"><i class="bi bi-briefcase me-2" style="color:var(--cu-gold);"></i>Careers</a>
-    <a href="#" class="mob-nav-plain"><i class="bi bi-people me-2" style="color:var(--cu-gold);"></i>Alumni</a>
-    <a href="#" class="mob-nav-plain"><i class="bi bi-bar-chart me-2" style="color:var(--cu-gold);"></i>NIRF Rankings</a>
-
-  </div>
-
-  <!-- Footer -->
-  <div class="mob-drawer-footer">
-    <div class="mob-footer-links">
-      <a href="#">Privacy Policy</a>
-      <a href="#">RTI</a>
-      <a href="#">Grievance</a>
-      <a href="#">Anti-Ragging</a>
-      <a href="#">IQAC</a>
-    </div>
-    <div class="d-flex justify-content-between align-items-center">
-      <div class="mob-footer-social">
-        <a href="#" class="mob-social-btn"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="mob-social-btn"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="mob-social-btn"><i class="bi bi-youtube"></i></a>
-        <a href="#" class="mob-social-btn"><i class="bi bi-linkedin"></i></a>
-      </div>
-      <a href="https://espro.christuniversity.in/Application/" target="_blank" class="btn btn-cu-blue btn-sm px-4 rounded-pill" style="font-size:.78rem;">
-        Apply Now →
-      </a>
-    </div>
-  </div>
-
-</div>
-
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-// SCROLLSPY
-(function(){
-  const links=document.querySelectorAll('.pg-nav-link[onclick]');
-  function update(){
-    const secs=document.querySelectorAll('.pg-section[id]');
-    let active=null;
-    secs.forEach(s=>{ if(s.getBoundingClientRect().top<=100) active=s.id; });
-    if(!active) return;
-    links.forEach(l=>l.classList.toggle('active',(l.getAttribute('onclick')||'').includes("'"+active+"'")));
-  }
-  window.addEventListener('scroll',update,{passive:true}); update();
-})();
-
-// SMOOTH SCROLL
-function scrollToSec(id){
-  const el=document.getElementById(id); if(!el) return;
-  const nav=document.querySelector('#mainNav');
-  window.scrollTo({top:el.getBoundingClientRect().top+window.pageYOffset-(nav?nav.offsetHeight:80)-16,behavior:'smooth'});
+/* FYD card photo strip */
+.fyd-card-photo {
+  width: calc(100% + 2.2rem);
+  margin: -1.25rem -1.1rem .9rem -1.1rem;
+  height: 160px;
+  overflow: hidden;
+  border-radius: .9rem .9rem 0 0;
+  position: relative;
+  flex-shrink: 0;
+}
+.fyd-card-photo img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 20%;
+  transition: transform .4s ease;
+  display: block;
+}
+.fyd-card:hover .fyd-card-photo img { transform: scale(1.05); }
+.fyd-card-photo::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(11,31,58,0) 40%, rgba(11,31,58,.35) 100%);
+}
+/* Active card — photo gets navy tint overlay */
+.fyd-card.active .fyd-card-photo::after {
+  background: none;
 }
 
-// YEAR TABS
-function showYear(yr,btn){
-  document.querySelectorAll('.curr-pane').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('.curr-tab').forEach(t=>t.classList.remove('active'));
-  const pane=document.getElementById('year-'+yr);
-  if(pane){ pane.classList.add('active');
-    pane.querySelectorAll('.curr-sem-body').forEach((b,i)=>{ b.style.display=i===0?'block':'none'; if(b.previousElementSibling) b.previousElementSibling.classList.toggle('open',i===0); }); }
-  if(btn) btn.classList.add('active');
+/* FYD panel scroll-reveal pulse */
+@keyframes fydPanelPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(12,77,139,.35), 0 4px 20px rgba(11,31,58,.07); }
+  50%  { box-shadow: 0 0 0 8px rgba(12,77,139,.0), 0 8px 32px rgba(11,31,58,.15); }
+  100% { box-shadow: 0 4px 20px rgba(11,31,58,.07); }
+}
+.fyd-panel.fyd-panel--flash {
+  animation: fydPanelPulse .7s ease-out forwards;
 }
 
-// ACCORDION
-function toggleSem(hd){
-  const body=hd.nextElementSibling; if(!body) return;
-  const open=body.style.display==='block';
-  const pane=hd.closest('.curr-pane')||document;
-  pane.querySelectorAll('.curr-sem-body').forEach(b=>{ b.style.display='none'; if(b.previousElementSibling) b.previousElementSibling.classList.remove('open'); });
-  if(!open){ body.style.display='block'; hd.classList.add('open'); }
+/* On mobile: hide level cards when search query is active so results show directly below search bar */
+@media (max-width: 767px) {
+  .fyd-cards.fyd-cards--hidden { display: none; }
+  .fyd-hint.fyd-hint--hidden   { display: none; }
 }
 
-// OPEN FIRST SEM EACH PANE
-(function(){
-  document.querySelectorAll('.curr-pane').forEach(p=>{
-    const b=p.querySelector('.curr-sem-body'), h=p.querySelector('.curr-sem-hd');
-    if(b) b.style.display='block'; if(h) h.classList.add('open');
-  });
-})();
+/* FYD search clear button */
+.fyd-clear-btn {
+  display: none;
+  align-items: center; justify-content: center;
+  width: 22px; height: 22px; border-radius: 50%;
+  border: none; background: #e2e8f0; color: #64748b;
+  font-size: .75rem; cursor: pointer; flex-shrink: 0;
+  transition: background .15s, color .15s; margin-right: .2rem;
+  line-height: 1;
+}
+.fyd-clear-btn:hover { background: #cbd5e1; color: #1e293b; }
+.fyd-clear-btn.visible { display: flex; }
 
-// COUNTERS
-(function(){
-  const obs=new IntersectionObserver(entries=>{
-    entries.forEach(e=>{ if(!e.isIntersecting) return; const el=e.target; if(el._counted) return; el._counted=1;
-      const to=+el.dataset.to; let c=0;
-      const t=setInterval(()=>{ c=Math.min(c+Math.ceil(to/50),to); el.textContent=c; if(c>=to) clearInterval(t); },25);
-      obs.unobserve(el); });
-  },{threshold:.2});
-  document.querySelectorAll('.hl-num[data-to]').forEach(el=>obs.observe(el));
-})();
-
-// ROADMAP
-window.showTrack=function(id,btn){
-  document.querySelectorAll('.rm-track').forEach(t=>{t.classList.remove('active');t.style.display='none';});
-  document.querySelectorAll('.rm-btn').forEach(b=>b.classList.remove('active'));
-  const t=document.getElementById('rt-'+id);
-  if(t){t.style.display='block';t.classList.add('active');} btn.classList.add('active');
-  // Redraw timeline line after tab becomes visible
-  if(window.drawTimelineLines) setTimeout(window.drawTimelineLines, 30);
-};
-(function(){ document.querySelectorAll('.rm-track').forEach(t=>{ if(!t.classList.contains('active')) t.style.display='none'; }); })();
-
-// SCROLL REVEAL
-(function(){
-  const obs=new IntersectionObserver(e=>{ e.forEach(x=>{ if(x.isIntersecting){x.target.classList.add('vis');obs.unobserve(x.target);} }); },{threshold:.07});
-  document.querySelectorAll('.sr').forEach(el=>obs.observe(el));
-})();
-
-// SECTION TITLE UNDERLINE
-(function(){
-  const obs=new IntersectionObserver(e=>e.forEach(x=>{ if(x.isIntersecting){x.target.classList.add('anim');obs.unobserve(x.target);} }),{threshold:.3});
-  document.querySelectorAll('.pg-title').forEach(el=>obs.observe(el));
-})();
-
-// NAVBAR DROPDOWN CLAMP
-document.querySelectorAll('.dropdown').forEach(dd=>{
-  dd.addEventListener('show.bs.dropdown',()=>{    const menu=dd.querySelector('.dropdown-menu');
-    if(!menu) return;
-    const rect=menu.getBoundingClientRect();
-    if(rect.right>window.innerWidth-12){
-      const overflow=rect.right-(window.innerWidth-12);
-      menu.style.transform=`translateX(-${overflow}px)`;
-    }
-  });
-  dd.addEventListener('hide.bs.dropdown',()=>{
-    const menu=dd.querySelector('.dropdown-menu');
-    if(menu) menu.style.transform='';
-  });
-});
-</script>
-
-<!-- dropdown hover handled by nav.js -->
-
-<script>
-// ── SHARED COMPONENT LOADER ──
-(function() {
-  function loadComponent(url, placeholderId, callback) {
-    fetch(url)
-      .then(function(r) { return r.text(); })
-      .then(function(html) {
-        var el = document.getElementById(placeholderId);
-        if (el) {
-          el.outerHTML = html;
-          if (callback) callback();
-        }
-      })
-      .catch(function(e) { console.warn('Could not load ' + url, e); });
+/* ── HOVER DROPDOWNS (desktop) ── */
+@media (min-width: 992px) {
+  #mainNav .mega-dropdown:hover > .dropdown-menu {
+    display: block;
   }
-  loadComponent('navbar.html', 'cu-nav-placeholder', function() {
-    // Re-init nav JS after navbar loads
-    var s = document.createElement('script');
-    s.src = 'nav.js';
-    document.body.appendChild(s);
-  });
-  loadComponent('footer.html', 'cu-footer-placeholder');
-})();
-</script>
+}
 
 
-<script>
-// ── TIMELINE LINE FIX ──
-(function() {
-  function drawTimelineLines() {
-    document.querySelectorAll('.rm-timeline').forEach(function(timeline) {
-      var old = timeline.querySelector('.rm-line');
-      if (old) old.remove();
 
-      var steps = timeline.querySelectorAll('.rm-step');
-      if (steps.length < 2) return;
 
-      var firstNode = steps[0].querySelector('.rm-node');
-      var lastNode  = steps[steps.length - 1].querySelector('.rm-node');
-      if (!firstNode || !lastNode) return;
 
-      var tlRect    = timeline.getBoundingClientRect();
-      var firstRect = firstNode.getBoundingClientRect();
-      var lastRect  = lastNode.getBoundingClientRect();
 
-      if (tlRect.height === 0) return;
+/* ── SCROLL TO TOP BUTTON ── */
+#scrollTop {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 9999;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--cu-blue);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 20px rgba(11,31,58,.25);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(14px);
+  transition: opacity .3s, transform .3s;
+}
+#scrollTop.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+#scrollTop:hover {
+  background: var(--cu-navy);
+  transform: translateY(-2px);
+}
+/* ── NAV DROPDOWN HOVER (desktop) ── */
+@media (min-width: 992px) {
 
-      var top    = (firstRect.top + firstRect.height / 2) - tlRect.top;
-      var bottom = (lastRect.top  + lastRect.height / 2)  - tlRect.top;
-
-      var line = document.createElement('div');
-      line.className = 'rm-line';
-      line.style.cssText = [
-        'position:absolute',
-        'left:20px',
-        'top:'    + top    + 'px',
-        'height:' + (bottom - top) + 'px',
-        'width:2px',
-        'background:linear-gradient(180deg,var(--cu-blue),var(--cu-gold))',
-        'border-radius:2px',
-        'z-index:0',
-        'pointer-events:none'
-      ].join(';');
-
-      timeline.style.position = 'relative';
-      timeline.insertBefore(line, timeline.firstChild);
-    });
+  /* Show dropdown on hover — only after nav-ready class is set (prevents flash on load) */
+  #mainNav.nav-ready .mega-dropdown:hover > .dropdown-menu,
+  #mainNav.nav-ready .nav-item.dropdown:hover > .dropdown-menu {
+    display: block !important;
   }
 
-  // Expose globally so tab-switch can trigger redraw
-  window.drawTimelineLines = drawTimelineLines;
+  /* Sit flush below nav — zero margin so no gap */
+  #mainNav .mega-dropdown > .dropdown-menu,
+  #mainNav .nav-item.dropdown > .dropdown-menu {
+    margin-top: 0 !important;
+    top: 100% !important;
+  }
 
-  setTimeout(drawTimelineLines, 100);
-  setTimeout(drawTimelineLines, 600);
-  setTimeout(drawTimelineLines, 1400);
-  window.addEventListener('resize', drawTimelineLines);
-  window.addEventListener('load', function() { setTimeout(drawTimelineLines, 200); });
-})();
-</script>
-</body>
-</html>
+  /* Invisible 12px bridge above the menu to cover the hairline gap
+     so moving the mouse from nav-link into menu never triggers mouseleave */
+  #mainNav .mega-dropdown > .dropdown-menu::before,
+  #mainNav .nav-item.dropdown > .dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: 0;
+    right: 0;
+    height: 12px;
+    background: transparent;
+  }
+}
+
+/* ── REMOVE BOOTSTRAP FOCUS RING ON NAV LINKS ── */
+#mainNav .nav-link:focus,
+#mainNav .nav-link:focus-visible,
+#mainNav .nav-link.show,
+#mainNav .dropdown-toggle:focus,
+#mainNav .dropdown-toggle:focus-visible,
+#mainNav .dropdown-toggle.show:focus,
+#mainNav .dropdown-toggle.show:focus-visible,
+#mainNav .nav-item.show > .nav-link,
+#mainNav .mega-dropdown.show > .nav-link {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+}
+
+/* Remove focus ring on campus switcher button */
+.campus-current-btn:focus,
+.campus-current-btn:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}

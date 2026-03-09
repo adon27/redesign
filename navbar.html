@@ -1,0 +1,256 @@
+<!-- CHRIST University Lavasa — Shared Navigation Component -->
+<!-- Include via: fetch('navbar.html') or server-side include -->
+<div id="topbar">
+  <div class="container-xl">
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center gap-3">
+
+        <!-- Campus Switcher -->
+        <div class="campus-switcher" id="campusSwitcher">
+          <button class="campus-current-btn" id="campusSwitcherBtn">
+            <span class="cc-dot"></span>
+            <i class="bi bi-building me-1"></i>Pune Lavasa
+            <i class="bi bi-chevron-down cc-chevron"></i>
+          </button>
+          <!-- Dropdown -->
+          <div class="campus-drop" id="campusDrop">
+            <div class="campus-drop-head">
+              <div>
+                <div class="campus-drop-title">Christ (Deemed to be University) — Campuses</div>
+                <div class="campus-drop-subtitle mt-1">Select a campus to visit its website</div>
+              </div>
+              <button class="campus-drop-close" id="campusDropClose"><i class="bi bi-x"></i></button>
+            </div>
+            <div class="campus-grid">
+              <a href="#" class="campus-item current">
+                <div class="ci-icon">🏔️</div>
+                <div>
+                  <div class="ci-city">Pune</div>
+                  <div class="ci-name">Lavasa</div>
+                  <div class="ci-tag">You are here</div>
+                </div>
+              </a>
+              <a href="https://christuniversity.in" target="_blank" class="campus-item">
+                <div class="ci-icon">🏛️</div>
+                <div>
+                  <div class="ci-city">Bangalore</div>
+                  <div class="ci-name">Central Campus</div>
+                  <div class="ci-tag">Main Campus</div>
+                </div>
+              </a>
+              <a href="https://kengeri.christuniversity.in" target="_blank" class="campus-item">
+                <div class="ci-icon">🎓</div>
+                <div>
+                  <div class="ci-city">Bangalore</div>
+                  <div class="ci-name">Kengeri Campus</div>
+                  <div class="ci-tag">Sciences & Engineering</div>
+                </div>
+              </a>
+              <a href="https://brc.christuniversity.in" target="_blank" class="campus-item">
+                <div class="ci-icon">📚</div>
+                <div>
+                  <div class="ci-city">Bangalore</div>
+                  <div class="ci-name">BGR Campus (BRC)</div>
+                  <div class="ci-tag">Commerce & Management</div>
+                </div>
+              </a>
+              <a href="https://byc.christuniversity.in" target="_blank" class="campus-item">
+                <div class="ci-icon">⚖️</div>
+                <div>
+                  <div class="ci-city">Bangalore</div>
+                  <div class="ci-name">Bannerghatta (BYC)</div>
+                  <div class="ci-tag">Law & Humanities</div>
+                </div>
+              </a>
+              <a href="https://delhi.christuniversity.in" target="_blank" class="campus-item">
+                <div class="ci-icon">🗺️</div>
+                <div>
+                  <div class="ci-city">Delhi</div>
+                  <div class="ci-name">Delhi NCR Campus</div>
+                  <div class="ci-tag">Management & Law</div>
+                </div>
+              </a>
+            </div>
+            <div class="campus-drop-footer">
+              <span><i class="bi bi-globe2 me-1"></i>6 campuses across India</span>
+              <a href="https://christuniversity.in" target="_blank">Visit Main Website →</a>
+            </div>
+          </div>
+        </div>
+
+        <span class="topbar-sep"></span>
+        <a href="#"><i class="bi bi-geo-alt me-1"></i>Lavasa, Pune</a>
+        <span class="topbar-sep"></span>
+        <a href="#"><i class="bi bi-telephone me-1"></i>020-2293 1000</a>
+        <span class="topbar-sep"></span>
+        <a href="#" class="d-none d-lg-inline"><i class="bi bi-envelope me-1"></i><span class="__cf_email__" data-cfemail="38595c55514b4b5157564b785b504a514b4c4d56514e5d4a4b514c41165156">[email&#160;protected]</span></a>
+      </div>
+      <div class="d-flex align-items-center gap-2">
+        <a href="#" class="d-none d-md-inline">Alumni</a>
+        <span class="topbar-sep"></span>
+        <a href="https://christuniversity.in/international-centre" target="_blank" class="d-none d-md-inline" style="color:var(--cu-gold);font-weight:600;"><i class="bi bi-globe2 me-1"></i>Global Exchange</a>
+        <span class="topbar-sep"></span>
+        <a href="#" class="d-none d-md-inline">NIRF</a>
+        <span class="topbar-sep"></span>
+        <a href="#" class="d-none d-md-inline">Student Portal</a>
+        <span class="topbar-sep"></span>
+        <a href="#" class="d-none d-lg-inline careers-pill"><i class="bi bi-briefcase me-1"></i>Careers</a>
+        <a href="https://espro.christuniversity.in/Application/" target="_blank" class="apply-pill">Apply 2026-27</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg sticky-top" id="mainNav">
+  <div class="container-xl">
+    <a class="navbar-brand" href="index.html">
+      <img src="https://lavasa.christuniversity.in/images/logo.png" alt="CHRIST University Lavasa">
+    </a>
+    <!-- Custom hamburger -->
+    <button id="mobMenuBtn" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav mx-auto gap-1">
+
+        <!-- ABOUT US -->
+        <li class="nav-item dropdown mega-dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">About Us</a>
+          <div class="dropdown-menu dd-wide">
+            <div class="dd-wide-inner">
+              <div class="dd-col-head">About Christ Lavasa</div>
+              <div class="dd-link-list">
+                <a href="#" class="dd-link"><i class="bi bi-clock-history"></i>History &amp; Milestones</a>
+                <a href="#" class="dd-link"><i class="bi bi-image"></i>Logo &amp; Anthem</a>
+                <a href="#" class="dd-link"><i class="bi bi-person-circle"></i>Founder</a>
+                <a href="#" class="dd-link"><i class="bi bi-bullseye"></i>Vision and Mission</a>
+                <a href="#" class="dd-link"><i class="bi bi-chat-quote"></i>Message from Vice Chancellor</a>
+                <a href="#" class="dd-link"><i class="bi bi-chat-quote"></i>Message from Director</a>
+                <a href="#" class="dd-link"><i class="bi bi-file-earmark-text"></i>Mandatory Disclosure</a>
+                <a href="#" class="dd-link"><i class="bi bi-mortarboard"></i>Graduate Attributes</a>
+                <a href="#" class="dd-link"><i class="bi bi-diagram-3"></i>Governance</a>
+                <a href="#" class="dd-link"><i class="bi bi-handshake"></i>Recognitions &amp; Collaborations</a>
+              </div>
+              <div class="dd-divider-v"></div>
+              <div>
+                <div class="dd-col-head">Disclosures &amp; More</div>
+                <div class="dd-link-list">
+                  <a href="#" class="dd-link"><i class="bi bi-buildings"></i>Administration</a>
+                  <a href="#" class="dd-link dd-gold"><i class="bi bi-unlock"></i>Disclosures</a>
+                  <a href="#" class="dd-link"><i class="bi bi-newspaper"></i>Articles by Faculty in Media</a>
+                  <a href="#" class="dd-link"><i class="bi bi-trophy"></i>Recognitions and Awards</a>
+                  <a href="#" class="dd-link"><i class="bi bi-patch-check"></i>NEP at CHRIST University</a>
+                  <a href="#" class="dd-link"><i class="bi bi-signpost-split"></i>Entry &amp; Exit Guidelines</a>
+                  <a href="#" class="dd-link"><i class="bi bi-people"></i>Advisory Board Members</a>
+                  <a href="#" class="dd-link"><i class="bi bi-globe2"></i>International Academic Collaborations</a>
+                  <a href="#" class="dd-link"><i class="bi bi-bar-chart-steps"></i>Ranking</a>
+                  <a href="#" class="dd-link"><i class="bi bi-award"></i>Accreditation</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- ACADEMICS -->
+        <li class="nav-item dropdown mega-dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Academics</a>
+          <div class="dropdown-menu" style="min-width:320px;">
+            <div class="dd-link-list p-1">
+              <a href="academics.html" class="dd-link" style="font-weight:700;color:var(--cu-gold);border-bottom:1px solid var(--cu-border);margin-bottom:.5rem;padding-bottom:.6rem;"><i class="bi bi-grid"></i>All Schools &amp; Programmes</a>
+              <a href="school-of-law.html" class="dd-link"><span style="margin-right:.5rem;">⚖️</span>School of Law</a>
+              <a href="school-of-business.html" class="dd-link"><span style="margin-right:.5rem;">📊</span>Business &amp; Management</a>
+              <a href="school-of-commerce.html" class="dd-link"><span style="margin-right:.5rem;">💹</span>Commerce &amp; Finance</a>
+              <a href="school-of-sciences.html" class="dd-link"><span style="margin-right:.5rem;">🧬</span>School of Sciences</a>
+              <a href="school-of-humanities.html" class="dd-link"><span style="margin-right:.5rem;">🎭</span>Humanities &amp; Performing Arts</a>
+              <div style="border-top:1px solid var(--cu-border);margin:.5rem 0;"></div>
+              <a href="https://online.christuniversity.in" target="_blank" class="dd-link" style="font-weight:700;color:var(--cu-blue);">
+                <span style="margin-right:.5rem;">🌐</span>Online Degree
+                <span style="font-size:.7rem;background:#0C4D8B;color:#fff;padding:.1rem .45rem;border-radius:2rem;margin-left:.3rem;vertical-align:middle;">UGC-DEB</span>
+              </a>
+            </div>
+          </div>
+        </li>
+
+        <!-- RESEARCH -->
+        <li class="nav-item dropdown mega-dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Research</a>
+          <div class="dropdown-menu" style="min-width:260px;">
+            <div class="dd-link-list p-1">
+              <a href="#" class="dd-link"><i class="bi bi-journal-text"></i>Research Centres</a>
+              <a href="#" class="dd-link"><i class="bi bi-file-earmark-text"></i>Publications</a>
+              <a href="#" class="dd-link"><i class="bi bi-lightbulb"></i>Innovation &amp; Incubation</a>
+              <a href="#" class="dd-link"><i class="bi bi-people"></i>PhD Programmes</a>
+              <a href="#" class="dd-link"><i class="bi bi-graph-up"></i>Research Policy</a>
+            </div>
+          </div>
+        </li>
+
+        <!-- STUDENT LIFE -->
+        <li class="nav-item dropdown mega-dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Student Life</a>
+          <div class="dropdown-menu" style="min-width:380px;">
+            <div class="row g-2">
+              <div class="col-6"><div class="dd-item"><div class="dd-icon">🏠</div><div class="dd-text"><h6>Hostel &amp; Dining</h6><small>On-campus residential life</small></div></div></div>
+              <div class="col-6"><div class="dd-item"><div class="dd-icon">🏆</div><div class="dd-text"><h6>Sports &amp; Fitness</h6><small>Courts, gym &amp; wellness</small></div></div></div>
+              <div class="col-6"><div class="dd-item"><div class="dd-icon">🎭</div><div class="dd-text"><h6>Clubs &amp; Activities</h6><small>Cultural, tech &amp; social</small></div></div></div>
+              <div class="col-6"><div class="dd-item"><div class="dd-icon">🌍</div><div class="dd-text"><h6>International Engagement</h6><small>Exchange &amp; dual degrees</small></div></div></div>
+              <div class="col-6"><div class="dd-item"><div class="dd-icon">💚</div><div class="dd-text"><h6>Mental Wellness</h6><small>Counselling &amp; peer support</small></div></div></div>
+              <div class="col-6"><div class="dd-item"><div class="dd-icon">⛺</div><div class="dd-text"><h6>Treks &amp; Adventure</h6><small>Sahyadri &amp; outdoor expeditions</small></div></div></div>
+            </div>
+          </div>
+        </li>
+
+        <!-- ADMISSIONS -->
+        <li class="nav-item dropdown mega-dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Admissions</a>
+          <div class="dropdown-menu" style="min-width:280px;">
+            <div class="dd-link-list p-1">
+              <a href="#" class="dd-link"><i class="bi bi-info-circle"></i>How to Apply</a>
+              <a href="#" class="dd-link"><i class="bi bi-calendar-check"></i>Important Dates</a>
+              <a href="#" class="dd-link"><i class="bi bi-file-earmark-check"></i>Eligibility Criteria</a>
+              <a href="#" class="dd-link"><i class="bi bi-currency-rupee"></i>Fee Structure</a>
+              <a href="#" class="dd-link"><i class="bi bi-award"></i>Scholarships</a>
+              <a href="#" class="dd-link"><i class="bi bi-globe2"></i>International Students</a>
+              <a href="#" class="dd-link dd-gold"><i class="bi bi-arrow-right-circle-fill"></i>Apply Now 2026-27</a>
+            </div>
+          </div>
+        </li>
+
+        <!-- E-SERVICES -->
+        <li class="nav-item dropdown mega-dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">E-Services</a>
+          <div class="dropdown-menu" style="min-width:260px;">
+            <div class="dd-link-list p-1">
+              <a href="#" class="dd-link"><i class="bi bi-person-badge"></i>Student Portal</a>
+              <a href="#" class="dd-link"><i class="bi bi-laptop"></i>IT Services</a>
+              <a href="#" class="dd-link"><i class="bi bi-book"></i>Library</a>
+              <a href="#" class="dd-link"><i class="bi bi-file-earmark-check"></i>Exam Portal</a>
+              <a href="#" class="dd-link"><i class="bi bi-envelope"></i>Email Login</a>
+              <a href="#" class="dd-link"><i class="bi bi-bus-front"></i>Transport</a>
+            </div>
+          </div>
+        </li>
+
+        <!-- VISITORS -->
+        <li class="nav-item dropdown mega-dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Visitors</a>
+          <div class="dropdown-menu" style="min-width:240px;">
+            <div class="dd-link-list p-1">
+              <a href="#" class="dd-link"><i class="bi bi-door-open"></i>Open Day</a>
+              <a href="#" class="dd-link"><i class="bi bi-map"></i>Campus Tour</a>
+              <a href="#" class="dd-link"><i class="bi bi-geo-alt"></i>How to Reach</a>
+              <a href="#" class="dd-link"><i class="bi bi-telephone"></i>Contact Us</a>
+              <a href="#" class="dd-link"><i class="bi bi-building"></i>Accommodation</a>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+      <div class="d-flex align-items-center gap-2 mt-2 mt-lg-0">
+        <button class="btn btn-sm rounded-circle border d-none d-lg-flex align-items-center justify-content-center" style="width:36px;height:36px;color:var(--cu-text-2);"><i class="bi bi-search"></i></button>
+        <a href="https://espro.christuniversity.in/Application/" target="_blank" class="btn btn-cu-blue btn-sm px-3 py-2 rounded-3">Apply Now →</a>
+      </div>
+    </div>
+  </div>
+</nav>
