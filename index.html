@@ -1380,6 +1380,35 @@ a{text-decoration:none;}
 .fyd-card.active .fyd-card-photo::after {
   background: none;
 }
+
+/* FYD panel scroll-reveal pulse */
+@keyframes fydPanelPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(12,77,139,.35), 0 4px 20px rgba(11,31,58,.07); }
+  50%  { box-shadow: 0 0 0 8px rgba(12,77,139,.0), 0 8px 32px rgba(11,31,58,.15); }
+  100% { box-shadow: 0 4px 20px rgba(11,31,58,.07); }
+}
+.fyd-panel.fyd-panel--flash {
+  animation: fydPanelPulse .7s ease-out forwards;
+}
+
+/* On mobile: hide level cards when search query is active so results show directly below search bar */
+@media (max-width: 767px) {
+  .fyd-cards.fyd-cards--hidden { display: none; }
+  .fyd-hint.fyd-hint--hidden   { display: none; }
+}
+
+/* FYD search clear button */
+.fyd-clear-btn {
+  display: none;
+  align-items: center; justify-content: center;
+  width: 22px; height: 22px; border-radius: 50%;
+  border: none; background: #e2e8f0; color: #64748b;
+  font-size: .75rem; cursor: pointer; flex-shrink: 0;
+  transition: background .15s, color .15s; margin-right: .2rem;
+  line-height: 1;
+}
+.fyd-clear-btn:hover { background: #cbd5e1; color: #1e293b; }
+.fyd-clear-btn.visible { display: flex; }
 </style>
 </head>
 <body>
@@ -1788,6 +1817,9 @@ a{text-decoration:none;}
       <input type="text" class="fyd-search-input" id="fydQ"
         placeholder="Search programme, school, department or keyword…"
         oninput="FYD.search(this.value)">
+      <button class="fyd-clear-btn" id="fydClear" onclick="FYD.clear()" title="Clear search">
+        <i class="bi bi-x"></i>
+      </button>
       <button class="fyd-search-btn" onclick="FYD.search(document.getElementById('fydQ').value)">
         <i class="bi bi-search"></i> Search
       </button>
@@ -4502,6 +4534,29 @@ window.FYD = (function() {
     body.innerHTML = html;
   }
 
+
+  function scrollToPanel() {
+    var panel = document.getElementById('fydBody');
+    if (!panel) return;
+    var wrap = panel.closest('.fyd-panel');
+    if (!wrap) return;
+    // Flash animation on panel
+    wrap.classList.remove('fyd-panel--flash');
+    void wrap.offsetWidth;
+    wrap.classList.add('fyd-panel--flash');
+    setTimeout(function() {
+      var isMobile = window.innerWidth < 768;
+      var navOffset = isMobile ? 68 : 100; // mobile: navbar only; desktop: topbar+navbar
+      var scrollTarget;
+      // Both mobile and desktop: scroll to search box
+      // On mobile the cards are stacked so panel appears directly below search bar
+      var searchBox = document.getElementById('fydQ');
+      scrollTarget = searchBox ? searchBox.closest('.fyd-search-wrap') : wrap;
+      var top = scrollTarget.getBoundingClientRect().top + window.pageYOffset - navOffset;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    }, 60);
+  }
+
   return {
     setLevel: function(el) {
       var cards = document.querySelectorAll('.fyd-card');
@@ -4511,26 +4566,97 @@ window.FYD = (function() {
       sch = 'all'; q = '';
       var inp = document.getElementById('fydQ');
       if (inp) inp.value = '';
+      var clearBtn = document.getElementById('fydClear');
+      if (clearBtn) clearBtn.classList.remove('visible');
+      // Restore cards+hint on mobile (they may be hidden from a previous search)
+      var cardsWrap = document.querySelector('.fyd-cards');
+      var hint      = document.querySelector('.fyd-hint');
+      if (cardsWrap) cardsWrap.classList.remove('fyd-cards--hidden');
+      if (hint)      hint.classList.remove('fyd-hint--hidden');
       var sbs = document.querySelectorAll('.fyd-sb');
       for (var j=0; j<sbs.length; j++) sbs[j].classList.remove('active');
       var allSb = document.querySelector('.fyd-sb[data-sch="all"]');
       if (allSb) allSb.classList.add('active');
       render();
+      scrollToPanel();
     },
     setSchool: function(el) {
       var sbs = document.querySelectorAll('.fyd-sb');
       for (var i=0; i<sbs.length; i++) sbs[i].classList.remove('active');
       el.classList.add('active');
       sch = el.getAttribute('data-sch');
+      // Auto-clear search bar when school filter is clicked
+      var inp = document.getElementById('fydQ');
+      if (inp) inp.value = '';
+      var clearBtn = document.getElementById('fydClear');
+      if (clearBtn) clearBtn.classList.remove('visible');
+      q = '';
+      // Restore cards+hint on mobile
+      var cardsWrap = document.querySelector('.fyd-cards');
+      var hint      = document.querySelector('.fyd-hint');
+      if (cardsWrap) cardsWrap.classList.remove('fyd-cards--hidden');
+      if (hint)      hint.classList.remove('fyd-hint--hidden');
       render();
     },
     search: function(val) {
       q = val ? val.trim() : '';
       if (q) {
         lvl = 'all';
+        sch = 'all'; // always search across all schools
         var cards = document.querySelectorAll('.fyd-card');
         for (var i=0; i<cards.length; i++) cards[i].classList.remove('active');
       }
+      // Show/hide clear button
+      var clearBtn = document.getElementById('fydClear');
+      if (clearBtn) clearBtn.classList.toggle('visible', !!q);
+      // On mobile: hide level cards + hint when searching
+      var cardsWrap = document.querySelector('.fyd-cards');
+      var hint      = document.querySelector('.fyd-hint');
+      if (cardsWrap) cardsWrap.classList.toggle('fyd-cards--hidden', !!q);
+      if (hint)      hint.classList.toggle('fyd-hint--hidden',       !!q);
+      render();
+      // Auto-highlight the school pill(s) that have matching results
+      if (q) {
+        var query = q.toLowerCase();
+        var matchingSchools = {};
+        PROGS.forEach(function(p) {
+          var hay = (p.name+' '+p.schoolName+' '+p.dept+' '+(p.tags||[]).join(' ')).toLowerCase();
+          if (hay.indexOf(query) !== -1) matchingSchools[p.school] = true;
+        });
+        var schoolKeys = Object.keys(matchingSchools);
+        var sbs = document.querySelectorAll('.fyd-sb');
+        for (var i=0; i<sbs.length; i++) sbs[i].classList.remove('active');
+        if (schoolKeys.length === 1) {
+          var matchSb = document.querySelector('.fyd-sb[data-sch="'+schoolKeys[0]+'"]');
+          if (matchSb) matchSb.classList.add('active');
+        } else {
+          var allSb = document.querySelector('.fyd-sb[data-sch="all"]');
+          if (allSb) allSb.classList.add('active');
+        }
+        scrollToPanel();
+      } else {
+        var allSb = document.querySelector('.fyd-sb[data-sch="all"]');
+        if (allSb) {
+          var sbs2 = document.querySelectorAll('.fyd-sb');
+          for (var j=0; j<sbs2.length; j++) sbs2[j].classList.remove('active');
+          allSb.classList.add('active');
+        }
+      }
+    },
+    clear: function() {
+      var inp = document.getElementById('fydQ');
+      if (inp) { inp.value = ''; inp.focus(); }
+      var clearBtn = document.getElementById('fydClear');
+      if (clearBtn) clearBtn.classList.remove('visible');
+      q = ''; sch = 'all';
+      var sbs = document.querySelectorAll('.fyd-sb');
+      for (var i=0; i<sbs.length; i++) sbs[i].classList.remove('active');
+      var allSb = document.querySelector('.fyd-sb[data-sch="all"]');
+      if (allSb) allSb.classList.add('active');
+      var cardsWrap = document.querySelector('.fyd-cards');
+      var hint      = document.querySelector('.fyd-hint');
+      if (cardsWrap) cardsWrap.classList.remove('fyd-cards--hidden');
+      if (hint)      hint.classList.remove('fyd-hint--hidden');
       render();
     },
     init: render
