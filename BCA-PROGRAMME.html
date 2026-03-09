@@ -66,7 +66,7 @@ a{text-decoration:none;}
 .campus-current-btn .cc-chevron{font-size:.55rem;transition:transform .22s;margin-left:.1rem;}
 .campus-switcher.open .cc-chevron{transform:rotate(180deg);}
 /* Dropdown panel */
-.campus-drop{position:absolute;top:calc(100% + .75rem);left:0;right:auto;
+.campus-drop{position:absolute;top:calc(100% + .2rem);left:0;right:auto;
   background:#fff;border-radius:1rem;border:1px solid rgba(11,31,58,.1);
   box-shadow:0 20px 60px rgba(11,31,58,.18);z-index:1050;
   width:700px;max-width:calc(100vw - 2rem);opacity:0;transform:translateY(-8px);
@@ -1388,6 +1388,21 @@ a{text-decoration:none;}
 #scrollTop.visible{opacity:1;pointer-events:all;}
 #scrollTop:hover{background:var(--cu-navy);transform:translateY(-2px);}
 
+
+/* ── Navbar hover dropdowns (desktop only) ───────────────────────── */
+@media (min-width: 992px) {
+  .nav-item.dropdown:hover > .dropdown-menu {
+    display: block; opacity: 1; transform: translateY(0); pointer-events: auto;
+  }
+  .dropdown-menu {
+    opacity: 0; transform: translateY(-6px);
+    transition: opacity .18s ease, transform .18s ease;
+    display: block; pointer-events: none;
+  }
+  .dropdown-menu.show {
+    opacity: 1; transform: translateY(0); pointer-events: auto;
+  }
+}
 </style>
 </head>
 <body>
@@ -1482,12 +1497,14 @@ a{text-decoration:none;}
       <div class="d-flex align-items-center gap-2">
         <a href="#" class="d-none d-md-inline">Alumni</a>
         <span class="topbar-sep"></span>
+        <a href="https://christuniversity.in/international-centre" target="_blank" class="d-none d-md-inline" style="color:var(--cu-gold);font-weight:600;"><i class="bi bi-globe2 me-1"></i>Global Exchange</a>
+        <span class="topbar-sep"></span>
         <a href="#" class="d-none d-md-inline">NIRF</a>
         <span class="topbar-sep"></span>
         <a href="#" class="d-none d-md-inline">Student Portal</a>
         <span class="topbar-sep"></span>
         <a href="#" class="d-none d-lg-inline careers-pill"><i class="bi bi-briefcase me-1"></i>Careers</a>
-        <a href="https://espro.christuniversity.in/Application/" target="_blank" class="apply-pill">Apply 2025–26</a>
+        <a href="https://espro.christuniversity.in/Application/" target="_blank" class="apply-pill">Apply 2026-27</a>
       </div>
     </div>
   </div>
@@ -1555,6 +1572,11 @@ a{text-decoration:none;}
               <a href="school-of-commerce.html" class="dd-link"><span style="margin-right:.5rem;">💹</span>Commerce &amp; Finance</a>
               <a href="school-of-sciences.html" class="dd-link"><span style="margin-right:.5rem;">🧬</span>School of Sciences</a>
               <a href="school-of-humanities.html" class="dd-link"><span style="margin-right:.5rem;">🎭</span>Humanities &amp; Performing Arts</a>
+              <div style="border-top:1px solid var(--cu-border);margin:.5rem 0;"></div>
+              <a href="https://online.christuniversity.in" target="_blank" class="dd-link" style="font-weight:700;color:var(--cu-blue);">
+                <span style="margin-right:.5rem;">🌐</span>Online Degree
+                <span style="font-size:.7rem;background:#0C4D8B;color:#fff;padding:.1rem .45rem;border-radius:2rem;margin-left:.3rem;vertical-align:middle;">UGC-DEB</span>
+              </a>
             </div>
           </div>
         </li>
@@ -1599,7 +1621,7 @@ a{text-decoration:none;}
               <a href="#" class="dd-link"><i class="bi bi-currency-rupee"></i>Fee Structure</a>
               <a href="#" class="dd-link"><i class="bi bi-award"></i>Scholarships</a>
               <a href="#" class="dd-link"><i class="bi bi-globe2"></i>International Students</a>
-              <a href="#" class="dd-link dd-gold"><i class="bi bi-arrow-right-circle-fill"></i>Apply Now 2025–26</a>
+              <a href="#" class="dd-link dd-gold"><i class="bi bi-arrow-right-circle-fill"></i>Apply Now 2026-27</a>
             </div>
           </div>
         </li>
@@ -1941,13 +1963,13 @@ a{text-decoration:none;}
 <footer id="footer" class="pt-5">
   <div class="container-xl">
     <div class="row g-4 pb-5">
-      <div class="col-lg-5 col-md-6"><div class="mb-3"><img src="https://lavasa.christuniversity.in/images/logo.png" alt="CHRIST University Lavasa" style="height:48px;filter:brightness(0) invert(1);opacity:.85;"></div><p style="font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.75;max-width:300px;">Christ University Road, 30 Valor Court, At Post: Dasve Lavasa, Taluka: Mulshi, Pune 412112, Maharashtra, India.</p><div class="d-flex flex-column gap-2 mt-3"><div class="footer-contact-item"><span class="icon"><i class="bi bi-telephone"></i></span><span>020-2293 1000 / 1001</span></div><div class="footer-contact-item"><span class="icon"><i class="bi bi-envelope"></i></span><span><a href="mailto:mail.lavasa@christuniversity.in">mail.lavasa@christuniversity.in</a></span></div><div class="footer-contact-item"><span class="icon"><i class="bi bi-globe"></i></span><span>lavasa.christuniversity.in</span></div></div></div>
+      <div class="col-lg-5 col-md-6"><div class="mb-3"><img src="https://lavasa.christuniversity.in/images/logo.png" alt="CHRIST University Lavasa" style="height:48px;filter:brightness(0) invert(1);opacity:.85;"></div><p style="font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.75;max-width:300px;">Christ University Road, 30 Valor Court, At Post: Dasve Lavasa, Taluka: Mulshi, Pune 412112, Maharashtra, India.</p><div class="d-flex flex-column gap-2 mt-3"><div class="footer-contact-item"><span class="icon"><i class="bi bi-telephone"></i></span><span>020-2293 1000 / 1001</span></div><div class="footer-contact-item"><span class="icon"><i class="bi bi-envelope"></i></span><span><a href="/cdn-cgi/l/email-protection#d0bdb1b9bcfebcb1a6b1a3b190b3b8a2b9a3a4a5beb9a6b5a2a3b9a4a9feb9be"><span class="__cf_email__" data-cfemail="c9a4a8a0a5e7a5a8bfa8baa889aaa1bba0babdbca7a0bfacbbbaa0bdb0e7a0a7">[email&#160;protected]</span></a></span></div><div class="footer-contact-item"><span class="icon"><i class="bi bi-globe"></i></span><span>lavasa.christuniversity.in</span></div></div></div>
       <div class="col-lg-2 col-md-3 col-6"><div class="footer-heading">Academics</div><ul class="list-unstyled d-flex flex-column gap-2"><li><a href="school-of-law.html" class="footer-link">School of Law</a></li><li><a href="school-of-business.html" class="footer-link">Business &amp; Management</a></li><li><a href="school-of-commerce.html" class="footer-link">Commerce &amp; Finance</a></li><li><a href="school-of-sciences.html" class="footer-link">Sciences</a></li><li><a href="school-of-humanities.html" class="footer-link">Humanities &amp; Arts</a></li><li><a href="#" class="footer-link">PhD Programmes</a></li></ul></div>
       <div class="col-lg-2 col-md-3 col-6"><div class="footer-heading">Campus</div><ul class="list-unstyled d-flex flex-column gap-2"><li><a href="#" class="footer-link">Admissions</a></li><li><a href="#" class="footer-link">Campus Life</a></li><li><a href="#" class="footer-link">Library</a></li><li><a href="#" class="footer-link">Hostel &amp; Dining</a></li><li><a href="#" class="footer-link">Sports</a></li><li><a href="#" class="footer-link">Placements</a></li></ul></div>
       <div class="col-lg-2 col-md-3 col-6"><div class="footer-heading">Quick Links</div><ul class="list-unstyled d-flex flex-column gap-2"><li><a href="#" class="footer-link">About Us</a></li><li><a href="#" class="footer-link">NIRF Data</a></li><li><a href="#" class="footer-link">FCRA</a></li><li><a href="#" class="footer-link">UBA</a></li><li><a href="#" class="footer-link">Research</a></li><li><a href="#" class="footer-link">Contact Us</a></li></ul></div>
     </div>
   </div>
-  <div class="footer-border"><div class="container-xl py-3"><div class="d-flex justify-content-between align-items-center flex-wrap gap-3"><div style="font-size:.75rem;color:rgba(255,255,255,.4);">© 2025 CHRIST (Deemed to be University), Pune Lavasa Campus. All rights reserved.</div><div class="d-flex gap-2"><span class="footer-badge">NAAC A+</span><span class="footer-badge">UGC</span><span class="footer-badge">NIRF</span></div><div class="d-flex gap-2"><a href="#" class="social-btn">in</a><a href="#" class="social-btn">f</a><a href="#" class="social-btn">ig</a><a href="#" class="social-btn">yt</a><a href="#" class="social-btn">tw</a></div></div></div></div>
+  <div class="footer-border"><div class="container-xl py-3"><div class="d-flex justify-content-between align-items-center flex-wrap gap-3"><div style="font-size:.75rem;color:rgba(255,255,255,.4);">© 2026 CHRIST (Deemed to be University), Pune Lavasa Campus. All rights reserved.</div><div class="d-flex gap-2"><span class="footer-badge">NAAC A+</span><span class="footer-badge">UGC</span><span class="footer-badge">NIRF</span></div><div class="d-flex gap-2"><a href="#" class="social-btn">in</a><a href="#" class="social-btn">f</a><a href="#" class="social-btn">ig</a><a href="#" class="social-btn">yt</a><a href="#" class="social-btn">tw</a></div></div></div></div>
 </footer>
 
 <div class="mob-overlay" id="mobOverlay"></div>
@@ -2125,7 +2147,7 @@ a{text-decoration:none;}
 
 <button id="scrollTop"><i class="bi bi-arrow-up"></i></button>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
 // SCROLLSPY
 (function(){
@@ -2213,11 +2235,63 @@ if(scrollTopBtn) scrollTopBtn.onclick=()=>window.scrollTo({top:0,behavior:'smoot
 
 // NAVBAR DROPDOWN CLAMP
 document.querySelectorAll('.dropdown').forEach(dd=>{
-  dd.addEventListener('show.bs.dropdown',()=>{
-    const m=dd.querySelector('.dropdown-menu'); if(!m) return;
-    setTimeout(()=>{ const r=m.getBoundingClientRect(); if(r.right>innerWidth-10) m.style.left=(innerWidth-r.width-20)+'px'; if(r.left<10) m.style.left='10px'; },10);
+  dd.addEventListener('show.bs.dropdown',()=>{    const menu=dd.querySelector('.dropdown-menu');
+    if(!menu) return;
+    const rect=menu.getBoundingClientRect();
+    if(rect.right>window.innerWidth-12){
+      const overflow=rect.right-(window.innerWidth-12);
+      menu.style.transform=`translateX(-${overflow}px)`;
+    }
+  });
+  dd.addEventListener('hide.bs.dropdown',()=>{
+    const menu=dd.querySelector('.dropdown-menu');
+    if(menu) menu.style.transform='';
   });
 });
+</script>
+
+<script>
+// ── Navbar hover dropdowns (desktop ≥992px) ──────────────────────
+(function() {
+  if (window.innerWidth < 992) return;
+  var navDropdowns = document.querySelectorAll('#mainNav .nav-item.dropdown');
+  navDropdowns.forEach(function(item) {
+    var menu   = item.querySelector('.dropdown-menu');
+    var toggle = item.querySelector('.dropdown-toggle');
+    var timer  = null;
+    function showMenu() {
+      clearTimeout(timer);
+      navDropdowns.forEach(function(other) {
+        if (other !== item) {
+          other.querySelector('.dropdown-menu').classList.remove('show');
+          var ot = other.querySelector('.dropdown-toggle');
+          if (ot) ot.setAttribute('aria-expanded', 'false');
+          other.classList.remove('show');
+        }
+      });
+      menu.classList.add('show');
+      item.classList.add('show');
+      if (toggle) toggle.setAttribute('aria-expanded', 'true');
+    }
+    function hideMenu() {
+      timer = setTimeout(function() {
+        menu.classList.remove('show');
+        item.classList.remove('show');
+        if (toggle) toggle.setAttribute('aria-expanded', 'false');
+      }, 120);
+    }
+    item.addEventListener('mouseenter', showMenu);
+    item.addEventListener('mouseleave', hideMenu);
+    menu.addEventListener('mouseenter', function() { clearTimeout(timer); });
+    menu.addEventListener('mouseleave', hideMenu);
+  });
+  window.addEventListener('resize', function() {
+    navDropdowns.forEach(function(item) {
+      item.querySelector('.dropdown-menu').classList.remove('show');
+      item.classList.remove('show');
+    });
+  });
+})();
 </script>
 </body>
 </html>
