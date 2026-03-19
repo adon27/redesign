@@ -8,10 +8,12 @@
     var nav = document.getElementById('mainNav');
     if (nav) nav.classList.add('nav-ready');
   }
-  // Use requestAnimationFrame + setTimeout to wait for full paint
-  requestAnimationFrame(function () {
-    setTimeout(markNavReady, 300);
-  });
+  // Prefer requestIdleCallback (non-blocking), fall back to rAF+timeout
+  if (window.requestIdleCallback) {
+    requestIdleCallback(markNavReady, { timeout: 400 });
+  } else {
+    requestAnimationFrame(function () { setTimeout(markNavReady, 150); });
+  }
 })();
 
 
