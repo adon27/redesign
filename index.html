@@ -3061,7 +3061,9 @@ document.addEventListener('DOMContentLoaded', function() { window.FYD.init(); })
           var data = bySchool[sName];
           html += '<div class="fyd-idr-group">' + data.icon + ' ' + sName + '</div>';
           data.items.forEach(function(p){
-            html += '<div class="fyd-idr-item" onclick="window.location.href=\'academics.html?q='+encodeURIComponent(q)+'\'">'
+            var dest = (p.exploreUrl && p.exploreUrl !== '') ? p.exploreUrl : ('academics.html?q='+encodeURIComponent(q));
+            var isExt = dest.indexOf('http') === 0 && dest.indexOf(window.location.hostname) === -1;
+            html += '<div class="fyd-idr-item" onclick="'+(isExt ? 'window.open(\''+dest+'\',\'_blank\')' : 'window.location.href=\''+dest+'\'')+'">'
               +'<div class="fyd-idr-item-name">'+p.name+'</div>'
               +'<div class="fyd-idr-item-meta">'
               +'<span>'+p.dept+'</span>'
